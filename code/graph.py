@@ -9,7 +9,8 @@ NAME_LIST = ['一号线', '二号线', '三号线', '四号线', '十号线']
 
 def single_subway_graph(name):
     g = nx.Graph()
-    with open(os.path.join(os.path.abspath(os.path.dirname(__file__)), '../data/{}.csv'.format(name))) as f:
+    with open(os.path.join(os.path.abspath(os.path.dirname(__file__)), '../data/{}.csv'.format(name)),
+              encoding='utf-8') as f:
         reader = csv.DictReader(f)
         last = None
         for row in reader:
