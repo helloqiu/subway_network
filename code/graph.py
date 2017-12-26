@@ -27,3 +27,11 @@ def subway_graph():
     for name in NAME_LIST:
         g = nx.compose(g, single_subway_graph(name))
     return g
+
+def subway_graph_without_7th_line():
+    g = nx.Graph()
+    temp_list = NAME_LIST
+    temp_list.remove('七号线')
+    for name in temp_list:
+        g = nx.compose(g, single_subway_graph(name))
+    return g
