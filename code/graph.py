@@ -4,7 +4,7 @@ import os
 import csv
 import networkx as nx
 
-NAME_LIST = ['一号线', '二号线', '三号线', '四号线', '十号线']
+NAME_LIST = ['一号线', '二号线', '三号线', '四号线', '十号线', '七号线']
 
 
 def single_subway_graph(name):
