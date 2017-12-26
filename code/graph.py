@@ -28,6 +28,7 @@ def subway_graph():
         g = nx.compose(g, single_subway_graph(name))
     return g
 
+
 def subway_graph_without_7th_line():
     g = nx.Graph()
     temp_list = NAME_LIST
