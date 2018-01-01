@@ -17,8 +17,8 @@ def relative_position():
             if float(row['longitude']) > max_lng:
                 max_lng = float(row['longitude'])
     for i in result:
-        i['latitude'] = (max_lat - float(i['latitude'])) * 1000
-        i['longitude'] = (max_lng - float(i['longitude'])) * 1000
+        i['latitude'] = (max_lat + 0.1 - float(i['latitude'])) * 5000
+        i['longitude'] = (max_lng + 0.1 - float(i['longitude'])) * 5000
     return result
 
 
