@@ -8,7 +8,7 @@ def relative_position():
     result = list()
     max_lat = 0
     max_lng = 0
-    with open(os.path.join(os.path.abspath(os.path.dirname(__file__)), '../data/location.csv')) as f:
+    with open(os.path.join(os.path.abspath(os.path.dirname(__file__)), '../data/locations_without_duplicate.csv')) as f:
         reader = csv.DictReader(f)
         for row in reader:
             result.append(row)
