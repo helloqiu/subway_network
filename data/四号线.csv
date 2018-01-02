@@ -1,31 +1,31 @@
-车站名称,英文名称,站间距离（km）,累计距离（km）
-万盛,Wansheng,-,0
-杨柳河,Yangliuhe,1.5,1.5
-凤溪河,Fengxihe,1.4,2.9
-南熏大道,Nanxun Avenue,1.2,4.1
-光华公园,Guanghua Park,1.1,5.2
-涌泉,Yongquan,1.5,6.7
-凤凰大街,Fenghuang Street,1.6,8.3
-马厂坝,Machangba,2.3,10.6
-非遗博览园,Intangible Cultural Heritage Park,1.0,11.6
-蔡桥,Caiqiao,2.2,13.8
-中坝,Zhongba,2.0,15.8
-成都西站,Chengdu West Railway Station,1.9,17.7
-清江西路,Qingjiang Road West,2.5,20.2
-文化宫,Cultural Palace,1.2,21.4
-西南财大,Southwestern University of Finance and Economics,1.0,22.4
-草堂北路,Caotang Road North,0.8,23.2
-中医大省医院,Chengdu University of TCM & Sichuan Provincial People's Hospital,1.2,24.4
-宽窄巷子,Kuanzhaixiangzi Alleys,1.0,25.4
-骡马市,Luomashi,1.5,26.9
-太升南路,Taisheng Road South,1.0,27.9
-市二医院,Chengdu Second People's Hospital,1.1,29.0
-玉双路,Yushuang Road,1.7,30.7
-双桥路,Shuangqiao Road,1.6,32.3
-万年场,Wannianchang,0.7,33.0
-槐树店,Huaishudian,2.2,35.2
-来龙,Lailong,2.4,37.6
-十陵,Shiling,0.8,38.4
-成都大学,Chengdu University,0.9,39.3
-明蜀王陵,Mingshuwangling,1.5,40.8
-西河,Xihe,2.3,43.1
+车站名称,英文名称,站间距离（km）,累计距离（km）,开通时间
+万盛,Wansheng,-,0,2017-6-2
+杨柳河,Yangliuhe,1.5,1.5,2017-6-2
+凤溪河,Fengxihe,1.4,2.9,2017-6-2
+南熏大道,Nanxun Avenue,1.2,4.1,2017-6-2
+光华公园,Guanghua Park,1.1,5.2,2017-6-2
+涌泉,Yongquan,1.5,6.7,2017-6-2
+凤凰大街,Fenghuang Street,1.6,8.3,2017-6-2
+马厂坝,Machangba,2.3,10.6,2017-6-2
+非遗博览园,Intangible Cultural Heritage Park,1.0,11.6,2015-12-26
+蔡桥,Caiqiao,2.2,13.8,2015-12-26
+中坝,Zhongba,2.0,15.8,2015-12-26
+成都西站,Chengdu West Railway Station,1.9,17.7,2015-12-26
+清江西路,Qingjiang Road West,2.5,20.2,2015-12-26
+文化宫,Cultural Palace,1.2,21.4,2015-12-26
+西南财大,Southwestern University of Finance and Economics,1.0,22.4,2015-12-26
+草堂北路,Caotang Road North,0.8,23.2,2015-12-26
+中医大省医院,Chengdu University of TCM & Sichuan Provincial People's Hospital,1.2,24.4,2015-12-26
+宽窄巷子,Kuanzhaixiangzi Alleys,1.0,25.4,2015-12-26
+骡马市,Luomashi,1.5,26.9,2015-12-26
+太升南路,Taisheng Road South,1.0,27.9,2015-12-26
+市二医院,Chengdu Second People's Hospital,1.1,29.0,2015-12-26
+玉双路,Yushuang Road,1.7,30.7,2015-12-26
+双桥路,Shuangqiao Road,1.6,32.3,2015-12-26
+万年场,Wannianchang,0.7,33.0,2015-12-26
+槐树店,Huaishudian,2.2,35.2,2017-6-2
+来龙,Lailong,2.4,37.6,2017-6-2
+十陵,Shiling,0.8,38.4,2017-6-2
+成都大学,Chengdu University,0.9,39.3,2017-6-2
+明蜀王陵,Mingshuwangling,1.5,40.8,2017-6-2
+西河,Xihe,2.3,43.1,2017-6-2
