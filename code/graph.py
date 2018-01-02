@@ -3,6 +3,8 @@
 import os
 import csv
 import networkx as nx
+from collections import OrderedDict
+from datetime import datetime
 
 NAME_LIST = ['一号线', '二号线', '三号线', '四号线', '十号线', '七号线']
 
@@ -36,3 +38,19 @@ def subway_graph_without_7th_line():
     for name in temp_list:
         g = nx.compose(g, single_subway_graph(name))
     return g
+
+
+def graph_by_data():
+    result = dict()
+    for name in NAME_LIST:
+        with open(os.path.join(os.path.abspath(os.path.dirname(__file__)), '../data/{}.csv'.format(name)),
+                  encoding='utf-8') as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                t = datetime.strptime(row['开通时间'], "%Y-%m-%d")
+                if t not in result.keys():
+                    result[t] = [row['车站名称']]
+                else:
+                    if row['车站名称'] not in result[t]:
+                        result[t].append(row['车站名称'])
+    return OrderedDict(sorted(result.items()))
