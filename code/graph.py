@@ -40,7 +40,7 @@ def subway_graph_without_7th_line():
     return g
 
 
-def graph_by_data():
+def nodes_by_data():
     result = dict()
     for name in NAME_LIST:
         with open(os.path.join(os.path.abspath(os.path.dirname(__file__)), '../data/{}.csv'.format(name)),
@@ -53,4 +53,25 @@ def graph_by_data():
                 else:
                     if row['车站名称'] not in result[t]:
                         result[t].append(row['车站名称'])
+    return OrderedDict(sorted(result.items()))
+
+
+def graph_by_date():
+    nodes = nodes_by_data()
+    n = list()
+    result = dict()
+    for key in nodes:
+        n = n + nodes[key]
+        g = subway_graph()
+        temp = list()
+        for i in g.nodes:
+            if i not in n:
+                temp.append(i)
+        g.remove_nodes_from(temp)
+        temp = list()
+        for i in g.edges:
+            if (i[0] not in n) or (i[1] not in n):
+                temp.append(i)
+        g.remove_edges_from(temp)
+        result[key] = g
     return OrderedDict(sorted(result.items()))

@@ -2,7 +2,7 @@
 
 import os
 import csv
-from graph import subway_graph, subway_graph_without_7th_line
+from graph import subway_graph, subway_graph_without_7th_line, graph_by_date
 from networkx.algorithms.centrality import betweenness_centrality
 
 base_dir = os.path.join(os.path.dirname(__file__), '../data/')
@@ -19,7 +19,7 @@ def bc_list(with_7th=True):
     return sorted(l, key=lambda s: s[1], reverse=True)
 
 
-if __name__ == "__main__":
+def work():
     result = bc_list()
     l = list()
     for i in result:
@@ -43,3 +43,23 @@ if __name__ == "__main__":
         w = csv.DictWriter(f, ['name', 'BC'])
         w.writeheader()
         w.writerows(l)
+
+
+if __name__ == "__main__":
+    result = graph_by_date()
+    for k in result.keys():
+        s = betweenness_centrality(result[k])
+        l = list()
+        for key in s:
+            l.append((key, s[key]))
+        l = sorted(l, key=lambda t: t[1], reverse=True)
+        temp = list()
+        for i in l:
+            temp.append({
+                'name': i[0],
+                'BC': i[1]
+            })
+        with open(os.path.join(base_dir, '分阶段数据/{}.csv'.format(k.strftime("%Y-%m-%d"))), 'a') as f:
+            w = csv.DictWriter(f, ['name', 'BC'])
+            w.writeheader()
+            w.writerows(temp)

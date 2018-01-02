@@ -1,6 +1,6 @@
 from generate_relative_position import relative_position
 import svgwrite
-from graph import subway_graph, graph_by_data
+from graph import subway_graph, nodes_by_data
 from datetime import datetime
 
 pos = relative_position()
@@ -88,7 +88,7 @@ def draw(stations, name):
 
 
 def draw_map_by_date():
-    data = graph_by_data()
+    data = nodes_by_data()
     temp = list()
     for key in data.keys():
         temp = temp + data[key]
