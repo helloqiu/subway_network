@@ -45,7 +45,7 @@ def work():
         w.writerows(l)
 
 
-if __name__ == "__main__":
+def bc_with_date():
     result = graph_by_date()
     for k in result.keys():
         s = betweenness_centrality(result[k])
@@ -63,3 +63,25 @@ if __name__ == "__main__":
             w = csv.DictWriter(f, ['name', 'BC'])
             w.writeheader()
             w.writerows(temp)
+
+
+def average_bc():
+    result = graph_by_date()
+    l = list()
+    for k in result.keys():
+        s = betweenness_centrality(result[k])
+        count = 0
+        for i in s:
+            count += s[i]
+        l.append({
+            'date': k.strftime("%Y-%m-%d"),
+            'average_bc': count / len(s)
+        })
+    with open(os.path.join(base_dir, 'average_bc.csv'), 'a') as f:
+        w = csv.DictWriter(f, ['date', 'average_bc'])
+        w.writeheader()
+        w.writerows(l)
+
+
+if __name__ == "__main__":
+    average_bc()
