@@ -69,15 +69,15 @@ def draw_size_bc():
     size = size_data()
     plt.figure(dpi=200)
     x1, y1 = zip(*sorted(zip(size, bc)))
-    plt.plot(x1, y1)
+    plt.plot(x1, y1, label='BC')
     plt.plot(x1, y1, 'o')
     delta = delta_bc()
     size.remove(size[0])
     size.remove(size[len(size) - 1])
     x2, y2 = zip(*sorted(zip(size, delta)))
-    plt.plot(x2, y2, '^')
-    plt.ylabel('BC')
+    plt.plot(x2, y2, '^', label='Delta BC')
     plt.xlabel('N')
+    plt.legend(loc='best')
 
     ax = plt.gca()
     ax.spines['bottom'].set_position(('data', 0))
@@ -88,4 +88,4 @@ def draw_size_bc():
 
 
 if __name__ == "__main__":
-    draw_size_diameter()
+    draw_size_bc()
