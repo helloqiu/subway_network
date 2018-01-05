@@ -35,6 +35,15 @@ def bc_data():
     return result
 
 
+def degree_data():
+    result = list()
+    with open(os.path.join(base_dir, "分阶段数据/平均度.csv"), 'r', encoding='utf-8') as f:
+        r = csv.DictReader(f)
+        for row in r:
+            result.append(float(row['average_degree']))
+    return result
+
+
 def get_delta(data):
     delta = list()
     last = data[0]
@@ -110,5 +119,23 @@ def draw_size_bc():
     plt.show()
 
 
+def draw_size_degree():
+    sns.set(style='ticks', palette='Set2')
+    degree = degree_data()
+    size = size_data()
+    plt.figure(dpi=200)
+    x1, y1 = zip(*sorted(zip(size, degree)))
+    plt.plot(x1, y1)
+    plt.plot(x1, y1, 'o')
+    plt.xlabel('N')
+    plt.ylabel('degree')
+
+    ax = plt.gca()
+    ax.spines['top'].set_color('none')
+    ax.spines['right'].set_color('none')
+
+    plt.show()
+
+
 if __name__ == "__main__":
-    draw_size_diameter_shortest_path()
+    draw_size_degree()
