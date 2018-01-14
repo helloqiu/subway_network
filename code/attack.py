@@ -2,6 +2,7 @@
 
 from graph import subway_graph
 from random import choice
+from betweenness_centrality_list import bc_list
 
 
 def random_attack(fraction=0.0):
@@ -28,4 +29,14 @@ def largest_degree_attack(fraction=0.0):
     degrees.sort(key=lambda s: s['degree'], reverse=True)
     for i in range(0, remove_num):
         g.remove_node(degrees[i]['name'])
+    return g
+
+
+def highest_bc_attack(fraction=0.0):
+    g = subway_graph()
+    nodes_num = len(g)
+    remove_num = int(fraction * nodes_num)
+    bc = bc_list()
+    for i in range(0, remove_num):
+        g.remove_node(bc[i][0])
     return g

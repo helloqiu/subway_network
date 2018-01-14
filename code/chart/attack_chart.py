@@ -4,13 +4,15 @@ import os
 import csv
 from multiprocessing import Process, Lock, Queue
 from queue import Empty
-from code.attack import random_attack, largest_degree_attack
+from code.attack import random_attack, largest_degree_attack, highest_bc_attack
 from networkx.algorithms.efficiency import global_efficiency
 import seaborn as sns
 import matplotlib.pyplot as plt
 
 d = 0.005
 base_dir = os.path.join(os.path.dirname(__file__), '../../data/')
+marker_size = 3
+line_width = 0.6
 
 
 def random_attack_efficiency():
@@ -65,6 +67,7 @@ def chart():
     fraction = list()
     random_efficiency = list()
     largest_degree_efficiency = list()
+    highest_bc_efficiency = list()
     with open(os.path.join(base_dir, 'attack/random_attack.csv'), 'r') as f:
         r = csv.DictReader(f)
         for row in r:
@@ -73,8 +76,8 @@ def chart():
     sns.set(style='ticks', palette='Set2')
     plt.figure(dpi=200)
     x1, y1 = zip(*sorted(zip(fraction, random_efficiency)))
-    p1, = plt.plot(x1, y1)
-    p2, = plt.plot(x1, y1, '*')
+    p1, = plt.plot(x1, y1, linewidth=line_width)
+    p2, = plt.plot(x1, y1, '*', ms=marker_size)
 
     fraction.clear()
     with open(os.path.join(base_dir, 'attack/largest_degree_attack.csv'), 'r') as f:
@@ -83,15 +86,28 @@ def chart():
             fraction.append(float(row['fraction']))
             largest_degree_efficiency.append(float(row['efficiency']))
     x2, y2 = zip(*sorted(zip(fraction, largest_degree_efficiency)))
-    p3, = plt.plot(x2, y2)
-    p4, = plt.plot(x2, y2, '^')
+    p3, = plt.plot(x2, y2, linewidth=line_width)
+    p4, = plt.plot(x2, y2, '^', ms=marker_size)
+
+    fraction.clear()
+    with open(os.path.join(base_dir, 'attack/highest_bc_attack.csv'), 'r') as f:
+        r = csv.DictReader(f)
+        for row in r:
+            fraction.append(float(row['fraction']))
+            highest_bc_efficiency.append(float(row['efficiency']))
+    x3, y3 = zip(*sorted(zip(fraction, highest_bc_efficiency)))
+    p5, = plt.plot(x3, y3, linewidth=line_width)
+    p6, = plt.plot(x3, y3, 'o', ms=marker_size)
 
     ax = plt.gca()
     ax.spines['top'].set_color('none')
     ax.spines['right'].set_color('none')
     plt.xlabel('Fraction of the removed nodes')
     plt.ylabel('Network efficiency')
-    ax.legend([(p1, p2), (p3, p4)], ['Random attacks', 'Largest degree node-based attacks'])
+    ax.legend(
+        [(p1, p2), (p3, p4), (p5, p6)],
+        ['Random attacks', 'Largest degree node-based attacks', 'Highest BC node-based attacks']
+    )
 
     plt.show()
 
@@ -107,6 +123,22 @@ def largest_degree_attack_efficiency():
             'efficiency': global_efficiency(g)
         })
     with open(os.path.join(base_dir, 'attack/largest_degree_attack.csv'), 'a') as f:
+        w = csv.DictWriter(f, ['fraction', 'efficiency'])
+        w.writeheader()
+        w.writerows(result)
+
+
+def highest_bc_attack_efficiency():
+    result = list()
+    for i in range(0, 100):
+        fraction = i * d
+        print("Highest BC attack with fraction %.3f" % fraction)
+        g = highest_bc_attack(fraction)
+        result.append({
+            'fraction': "%.3f" % fraction,
+            'efficiency': global_efficiency(g)
+        })
+    with open(os.path.join(base_dir, 'attack/highest_bc_attack.csv'), 'a') as f:
         w = csv.DictWriter(f, ['fraction', 'efficiency'])
         w.writeheader()
         w.writerows(result)
