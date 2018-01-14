@@ -4,7 +4,7 @@ import os
 import csv
 from multiprocessing import Process, Lock, Queue
 from queue import Empty
-from code.attack import random_attack
+from code.attack import random_attack, largest_degree_attack
 from networkx.algorithms.efficiency import global_efficiency
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -61,27 +61,56 @@ def random_attack_efficiency():
         w.writerows(result)
 
 
-def random_attack_chart():
+def chart():
     fraction = list()
-    efficiency = list()
+    random_efficiency = list()
+    largest_degree_efficiency = list()
     with open(os.path.join(base_dir, 'attack/random_attack.csv'), 'r') as f:
         r = csv.DictReader(f)
         for row in r:
             fraction.append(float(row['fraction']))
-            efficiency.append(float(row['efficiency']))
+            random_efficiency.append(float(row['efficiency']))
     sns.set(style='ticks', palette='Set2')
     plt.figure(dpi=200)
-    x1, y1 = zip(*sorted(zip(fraction, efficiency)))
-    plt.plot(x1, y1)
-    plt.plot(x1, y1, '*')
+    x1, y1 = zip(*sorted(zip(fraction, random_efficiency)))
+    p1, = plt.plot(x1, y1)
+    p2, = plt.plot(x1, y1, '*')
+
+    fraction.clear()
+    with open(os.path.join(base_dir, 'attack/largest_degree_attack.csv'), 'r') as f:
+        r = csv.DictReader(f)
+        for row in r:
+            fraction.append(float(row['fraction']))
+            largest_degree_efficiency.append(float(row['efficiency']))
+    x2, y2 = zip(*sorted(zip(fraction, largest_degree_efficiency)))
+    p3, = plt.plot(x2, y2)
+    p4, = plt.plot(x2, y2, '^')
+
     ax = plt.gca()
     ax.spines['top'].set_color('none')
     ax.spines['right'].set_color('none')
     plt.xlabel('Fraction of the removed nodes')
     plt.ylabel('Network efficiency')
+    ax.legend([(p1, p2), (p3, p4)], ['Random attacks', 'Largest degree node-based attacks'])
 
     plt.show()
 
 
+def largest_degree_attack_efficiency():
+    result = list()
+    for i in range(0, 100):
+        fraction = i * d
+        print("Largest degree attack with fraction %.3f" % fraction)
+        g = largest_degree_attack(fraction)
+        result.append({
+            'fraction': "%.3f" % fraction,
+            'efficiency': global_efficiency(g)
+        })
+    with open(os.path.join(base_dir, 'attack/largest_degree_attack.csv'), 'a') as f:
+        w = csv.DictWriter(f, ['fraction', 'efficiency'])
+        w.writeheader()
+        w.writerows(result)
+
+
 if __name__ == "__main__":
-    random_attack_chart()
+    chart()
