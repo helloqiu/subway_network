@@ -5,7 +5,6 @@ import csv
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
-from matplotlib.ticker import MultipleLocator
 
 base_dir = os.path.join(os.path.dirname(__file__), '../../data/')
 
@@ -43,9 +42,8 @@ def largest_degree_attack_with_highest_bt_protect_chart():
     ax = plt.gca()
     ax.spines['top'].set_color('none')
     ax.spines['right'].set_color('none')
-    xmajorLocator = MultipleLocator(0.1)
-    ax.xaxis.set_major_locator(xmajorLocator)
-    ax.yaxis.set_major_locator(xmajorLocator)
+    plt.xticks(np.linspace(0, 0.5, 10))
+    plt.yticks(np.linspace(0, 0.5, 10))
     plt.xlabel('Fraction of the removed nodes')
     plt.ylabel('Fraction of the protected nodes')
     plt.show()
