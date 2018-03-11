@@ -20,6 +20,7 @@ def get_data(name):
 
 def largest_degree_attack_with_highest_bt_protect_chart():
     sns.set(style='ticks', palette='Set2')
+    plt.figure(dpi=200)
     result = get_data('largest_degree_attack_with_highest_bt_protect.csv')
     attack = list()
     protect = list()
