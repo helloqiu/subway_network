@@ -40,6 +40,6 @@ def attack_with_protect_efficiency(attack, protect):
 
 
 if __name__ == "__main__":
-    attack_with_protect_efficiency(attack=largest_degree_attack_list, protect=highest_bc_attack_list)
-    attack_with_protect_efficiency(attack=highest_bc_attack_list, protect=highest_bc_attack_list)
-    attack_with_protect_efficiency(attack=highest_bt_attack_list, protect=highest_bc_attack_list)
+    attack_with_protect_efficiency(attack=largest_degree_attack_list, protect=largest_degree_attack_list)
+    attack_with_protect_efficiency(attack=highest_bc_attack_list, protect=largest_degree_attack_list)
+    attack_with_protect_efficiency(attack=highest_bt_attack_list, protect=largest_degree_attack_list)
