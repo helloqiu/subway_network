@@ -18,10 +18,11 @@ def get_data(name):
     return result
 
 
-def largest_degree_attack_with_highest_bt_protect_chart():
+def draw_chart(name):
     sns.set(style='ticks', palette='Set2')
+    cmap = plt.cm.Reds
     plt.figure(dpi=200)
-    result = get_data('largest_degree_attack_with_highest_bt_protect.csv')
+    result = get_data(name)
     attack = list()
     protect = list()
     efficiency = list()
@@ -37,17 +38,17 @@ def largest_degree_attack_with_highest_bt_protect_chart():
         for j in range(x.shape[1]):
             z[i, j] = dic[(x[i, j], y[i, j])]
 
-    plt.pcolor(x, y, z)
+    plt.pcolormesh(x, y, z, cmap=cmap)
     plt.colorbar()
     ax = plt.gca()
     ax.spines['top'].set_color('none')
     ax.spines['right'].set_color('none')
-    plt.xticks(np.linspace(0, 0.5, 10))
-    plt.yticks(np.linspace(0, 0.5, 10))
+    for label in ax.get_xticklabels()[::2]:
+        label.set_visible(False)
     plt.xlabel('Fraction of the removed nodes')
     plt.ylabel('Fraction of the protected nodes')
     plt.show()
 
 
 if __name__ == "__main__":
-    largest_degree_attack_with_highest_bt_protect_chart()
+    draw_chart('highest_bt_attack_with_highest_bt_protect.csv')
