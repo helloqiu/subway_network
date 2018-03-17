@@ -3,7 +3,7 @@
 import os
 import csv
 from attack import random_attack_list, largest_degree_attack_list, highest_bc_attack_list, highest_bt_attack_list
-from graph import subway_graph
+from graph import get_chengdu_subway_graph
 from networkx.algorithms.efficiency import global_efficiency
 
 d = 0.02
@@ -50,7 +50,7 @@ def get_result(attack, protect):
         attack_fraction = d * i
         print('attack fraction: %.2f' % attack_fraction)
         for j in range(0, 25):
-            g = subway_graph()
+            g = get_chengdu_subway_graph()
             attack_list = attack(g, fraction=attack_fraction)
             protect_fraction = d * j
             print('\t protect fraction: %.2f' % protect_fraction)

@@ -1,7 +1,6 @@
 from generate_relative_position import relative_position
 import svgwrite
-from graph import subway_graph, nodes_by_data
-from datetime import datetime
+from graph import get_chengdu_subway_graph, chengdu_nodes_by_date
 
 pos = relative_position()
 
@@ -22,7 +21,7 @@ def draw_map():
             font_family="黑体",
             style="text-anchor: middle; dominant-baseline: central;"
         ))
-    g = subway_graph()
+    g = get_chengdu_subway_graph()
     for e in g.edges.data():
         pos_a = get_location(e[0], pos)
         pos_b = get_location(e[1], pos)
@@ -65,7 +64,7 @@ def draw(stations, name):
             font_family="黑体",
             style="text-anchor: middle; dominant-baseline: central;"
         ))
-    g = subway_graph()
+    g = get_chengdu_subway_graph()
     for e in g.edges.data():
         if (e[0] not in stations) or (e[1] not in stations):
             continue
@@ -88,7 +87,7 @@ def draw(stations, name):
 
 
 def draw_map_by_date():
-    data = nodes_by_data()
+    data = chengdu_nodes_by_date()
     temp = list()
     for key in data.keys():
         temp = temp + data[key]

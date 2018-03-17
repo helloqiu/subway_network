@@ -2,7 +2,7 @@
 
 import os
 import csv
-from graph import subway_graph, subway_graph_without_7th_line, graph_by_date
+from graph import get_chengdu_subway_graph, chengdu_graph_by_date
 from networkx.algorithms.centrality import betweenness_centrality
 
 base_dir = os.path.join(os.path.dirname(__file__), '../data/')
@@ -10,9 +10,9 @@ base_dir = os.path.join(os.path.dirname(__file__), '../data/')
 
 def bc_list(with_7th=True):
     if with_7th:
-        result = betweenness_centrality(subway_graph())
+        result = betweenness_centrality(get_chengdu_subway_graph())
     else:
-        result = betweenness_centrality(subway_graph_without_7th_line())
+        result = betweenness_centrality(get_chengdu_subway_graph(with_7th_line=False))
     l = list()
     for key in result:
         l.append((key, result[key]))
@@ -46,7 +46,7 @@ def work():
 
 
 def bc_with_date():
-    result = graph_by_date()
+    result = chengdu_graph_by_date()
     for k in result.keys():
         s = betweenness_centrality(result[k])
         l = list()
@@ -66,7 +66,7 @@ def bc_with_date():
 
 
 def average_bc():
-    result = graph_by_date()
+    result = chengdu_graph_by_date()
     l = list()
     for k in result.keys():
         s = betweenness_centrality(result[k])

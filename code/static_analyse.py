@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 
-from graph import subway_graph
+from graph import get_chengdu_subway_graph
 import collections
 
 
 def degree():
-    G = subway_graph()
+    G = get_chengdu_subway_graph()
     degree_sequence = sorted([d for n, d in G.degree()], reverse=True)
     degree_count = collections.Counter(degree_sequence)
     deg, cnt = zip(*degree_count.items())

@@ -1,27 +1,27 @@
 # -*- coding: utf-8 -*-
 
-from graph import subway_graph
+from graph import get_chengdu_subway_graph
 from random import choice
 from betweenness_centrality_list import bc_list
 from util.breadth_tree import get_bt_list
 
 
 def random_attack(fraction=0.0):
-    g = subway_graph()
+    g = get_chengdu_subway_graph()
     for i in random_attack_list(g, fraction):
         g.remove_node(i)
     return g
 
 
 def largest_degree_attack(fraction=0.0):
-    g = subway_graph()
+    g = get_chengdu_subway_graph()
     for i in largest_degree_attack_list(g, fraction):
         g.remove_node(i)
     return g
 
 
 def highest_bc_attack(fraction=0.0):
-    g = subway_graph()
+    g = get_chengdu_subway_graph()
     for i in highest_bc_attack_list(g, fraction):
         g.remove_node(i)
     return g

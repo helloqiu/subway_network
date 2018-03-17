@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 
-from code.graph import subway_graph
+from code.graph import get_chengdu_subway_graph
 import networkx as nx
 import json
 
 
 def generate_node_link_data():
-    G = subway_graph()
+    G = get_chengdu_subway_graph()
     data = nx.node_link_data(G)
     with open('node_link.json', 'a', encoding='utf-8') as f:
         f.write(json.dumps(data, ensure_ascii=False))

@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 
-from code.graph import subway_graph
+from code.graph import get_chengdu_subway_graph
 import networkx as nx
 import csv
 
 if __name__ == '__main__':
-    G = subway_graph()
+    G = get_chengdu_subway_graph()
     nx.write_weighted_edgelist(G, 'subway_graph.csv')
     l = list()
     with open('subway_graph_node.csv', 'a', encoding='utf-8') as f:

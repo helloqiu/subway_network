@@ -2,7 +2,7 @@
 
 import os
 import csv
-from graph import graph_by_date
+from graph import chengdu_graph_by_date
 from networkx.algorithms.distance_measures import diameter
 
 base_dir = os.path.join(os.path.dirname(__file__), '../data/')
@@ -10,7 +10,7 @@ base_dir = os.path.join(os.path.dirname(__file__), '../data/')
 
 def get_diameter():
     l = list()
-    result = graph_by_date()
+    result = chengdu_graph_by_date()
     for k in result.keys():
         g = result[k]
         d = diameter(g)

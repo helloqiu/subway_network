@@ -2,14 +2,14 @@
 
 import os
 import csv
-from graph import graph_by_date
+from graph import chengdu_graph_by_date
 from networkx import average_shortest_path_length
 
 base_dir = os.path.join(os.path.dirname(__file__), '../data/')
 
 
 def average_shortest_path():
-    result = graph_by_date()
+    result = chengdu_graph_by_date()
     l = list()
     for k in result.keys():
         g = result[k]

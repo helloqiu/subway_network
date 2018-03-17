@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from graph import graph_by_date
+from graph import chengdu_graph_by_date
 import os
 import csv
 
@@ -8,7 +8,7 @@ base_dir = os.path.join(os.path.dirname(__file__), '../data/')
 
 
 def degree_by_date():
-    result = graph_by_date()
+    result = chengdu_graph_by_date()
     data = list()
     for key in result.keys():
         g = result[key]
