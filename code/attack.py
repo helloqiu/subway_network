@@ -56,7 +56,7 @@ def highest_bc_attack_list(G, fraction=0.0):
     nodes_num = len(G)
     remove_num = int(fraction * nodes_num)
     result = list()
-    bc = bc_list()
+    bc = bc_list(get_chengdu_subway_graph())
     for i in range(0, remove_num):
         result.append(bc[i][0])
     return result

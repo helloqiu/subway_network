@@ -8,19 +8,25 @@ from networkx.algorithms.centrality import betweenness_centrality
 base_dir = os.path.join(os.path.dirname(__file__), '../data/')
 
 
-def bc_list(with_7th=True):
-    if with_7th:
-        result = betweenness_centrality(get_chengdu_subway_graph())
-    else:
-        result = betweenness_centrality(get_chengdu_subway_graph(with_7th_line=False))
+def bc_list(g):
+    """
+    生成降序 BC 排列的节点 list。
+    :param g: 要分析的 Graph
+    :return: 一个 list
+    """
+    result = betweenness_centrality(g)
     l = list()
     for key in result:
         l.append((key, result[key]))
     return sorted(l, key=lambda s: s[1], reverse=True)
 
 
-def work():
-    result = bc_list()
+def generate_chengdu_bc_list():
+    """
+    生成成都BC排序的结果。
+    :return:
+    """
+    result = bc_list(get_chengdu_subway_graph())
     l = list()
     for i in result:
         l.append({
@@ -32,7 +38,7 @@ def work():
         w.writeheader()
         w.writerows(l)
 
-    result = bc_list(with_7th=False)
+    result = bc_list(get_chengdu_subway_graph(with_7th_line=False))
     l = list()
     for i in result:
         l.append({
@@ -45,7 +51,11 @@ def work():
         w.writerows(l)
 
 
-def bc_with_date():
+def chengdu_bc_with_date():
+    """
+    分阶段的BC排序。
+    :return:
+    """
     result = chengdu_graph_by_date()
     for k in result.keys():
         s = betweenness_centrality(result[k])
@@ -65,7 +75,11 @@ def bc_with_date():
             w.writerows(temp)
 
 
-def average_bc():
+def chengdu_average_bc():
+    """
+    分阶段的成都平均BC。
+    :return:
+    """
     result = chengdu_graph_by_date()
     l = list()
     for k in result.keys():
@@ -81,7 +95,3 @@ def average_bc():
         w = csv.DictWriter(f, ['date', 'average_bc'])
         w.writeheader()
         w.writerows(l)
-
-
-if __name__ == "__main__":
-    average_bc()
