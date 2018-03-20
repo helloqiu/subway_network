@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from graph import get_chengdu_subway_graph
+from graph import get_chengdu_subway_graph, get_shanghai_subway_graph
 from random import choice
 from betweenness_centrality_list import bc_list
 from util.breadth_tree import get_bt_list
@@ -13,8 +13,22 @@ def random_attack(fraction=0.0):
     return g
 
 
+def shanghai_random_attack(fraction=0.0):
+    g = get_shanghai_subway_graph()
+    for i in random_attack_list(g, fraction):
+        g.remove_node(i)
+    return g
+
+
 def largest_degree_attack(fraction=0.0):
     g = get_chengdu_subway_graph()
+    for i in largest_degree_attack_list(g, fraction):
+        g.remove_node(i)
+    return g
+
+
+def shanghai_largest_degree_attack(fraction=0.0):
+    g = get_shanghai_subway_graph()
     for i in largest_degree_attack_list(g, fraction):
         g.remove_node(i)
     return g
@@ -23,6 +37,13 @@ def largest_degree_attack(fraction=0.0):
 def highest_bc_attack(fraction=0.0):
     g = get_chengdu_subway_graph()
     for i in highest_bc_attack_list(g, fraction):
+        g.remove_node(i)
+    return g
+
+
+def shanghai_highest_bc_attack(fraction=0.0):
+    g = get_shanghai_subway_graph()
+    for i in shanghai_highest_bc_attack_list(g, fraction):
         g.remove_node(i)
     return g
 
@@ -57,6 +78,16 @@ def highest_bc_attack_list(G, fraction=0.0):
     remove_num = int(fraction * nodes_num)
     result = list()
     bc = bc_list(get_chengdu_subway_graph())
+    for i in range(0, remove_num):
+        result.append(bc[i][0])
+    return result
+
+
+def shanghai_highest_bc_attack_list(G, fraction=0.0):
+    nodes_num = len(G)
+    remove_num = int(fraction * nodes_num)
+    result = list()
+    bc = bc_list(get_shanghai_subway_graph())
     for i in range(0, remove_num):
         result.append(bc[i][0])
     return result

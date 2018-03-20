@@ -1,12 +1,12 @@
-from generate_relative_position import relative_position
+from generate_relative_position import relative_position, shanghai_relative_position
 import svgwrite
-from graph import get_chengdu_subway_graph, chengdu_nodes_by_date
+from graph import get_chengdu_subway_graph, chengdu_nodes_by_date, get_shanghai_subway_graph
 
-pos = relative_position()
+pos = shanghai_relative_position()
 
 
 def draw_map():
-    dwg = svgwrite.Drawing('../picture/地铁位置图.svg', profile='full', size=('2000', '3000'))
+    dwg = svgwrite.Drawing('../picture/上海地铁位置图.svg', profile='full', size=('2000', '3000'))
     for i in pos:
         dwg.add(svgwrite.shapes.Circle(
             center=(i['latitude'], i['longitude']),
@@ -21,18 +21,21 @@ def draw_map():
             font_family="黑体",
             style="text-anchor: middle; dominant-baseline: central;"
         ))
-    g = get_chengdu_subway_graph()
+    g = get_shanghai_subway_graph()
     for e in g.edges.data():
         pos_a = get_location(e[0], pos)
         pos_b = get_location(e[1], pos)
-        dwg.add(svgwrite.path.Path(
-            stroke_width="1",
-            stroke_opacity="0.5",
-            stroke="#ffaa5c",
-            d="M {},{} L {},{}".format(pos_a[0], pos_a[1], pos_b[0], pos_b[1])
-        ))
+        try:
+            dwg.add(svgwrite.path.Path(
+                stroke_width="1",
+                stroke_opacity="0.5",
+                stroke="#ffaa5c",
+                d="M {},{} L {},{}".format(pos_a[0], pos_a[1], pos_b[0], pos_b[1])
+            ))
+        except:
+            print(e)
         dwg.add(svgwrite.text.Text(
-            text=e[2]['weight'],
+            text=e[2]['weight'] if 'weight' in e[2].keys() else '',
             font_size="5",
             font_family="黑体",
             style="text-anchor: middle; dominant-baseline: central;",
@@ -95,4 +98,4 @@ def draw_map_by_date():
 
 
 if __name__ == '__main__':
-    draw_map_by_date()
+    draw_map()

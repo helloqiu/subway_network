@@ -7,6 +7,9 @@ from collections import OrderedDict
 from datetime import datetime
 
 NAME_LIST = ['一号线', '二号线', '三号线', '四号线', '十号线', '七号线']
+SHANGHAI_NAME_LIST = ['一号线', '二号线', '三号线', '四号线', '五号线', '六号线',
+                      '七号线', '八号线', '九号线', '十号线', '十一号线', '十二号线',
+                      '十三号线', '十六号线', '十七号线']
 
 
 def _single_subway_graph(path):
@@ -22,8 +25,10 @@ def _single_subway_graph(path):
         last = None
         for row in reader:
             g.add_node(row['车站名称'])
-            if row['站间距离（km）'] != '-':
+            if row['站间距离（km）'] != '-' and row['站间距离（km）'] != '－' and row['站间距离（km）'] != '':
                 g.add_edge(row['车站名称'], last, weight=float(row['站间距离（km）']))
+            elif row['站间距离（km）'] == '':
+                g.add_edge(row['车站名称'], last)
             last = row['车站名称']
 
     return g
@@ -40,6 +45,18 @@ def get_chengdu_subway_graph(with_7th_line=True):
         if with_7th_line is True or name != '七号线':
             g = nx.compose(g, _single_subway_graph(
                 path=os.path.join(os.path.dirname(__file__), '../data/chengdu_metadata/{}.csv'.format(name))))
+    return g
+
+
+def get_shanghai_subway_graph():
+    """
+    Get shanghai subway graph.
+    :return: A graph
+    """
+    g = nx.Graph()
+    for name in SHANGHAI_NAME_LIST:
+        g = nx.compose(g, _single_subway_graph(
+            path=os.path.join(os.path.dirname(__file__), '../data/shanghai_metadata/{}.csv'.format(name))))
     return g
 
 
