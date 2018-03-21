@@ -11,7 +11,7 @@ base_dir = os.path.join(os.path.dirname(__file__), '../../data/')
 
 def get_data(name):
     result = list()
-    with open(os.path.join(base_dir, 'attack/{}'.format(name)), 'r') as f:
+    with open(os.path.join(base_dir, 'shanghai_attack/{}'.format(name)), 'r') as f:
         r = csv.DictReader(f)
         for row in r:
             result.append((row['attack_fraction'], row['protect_fraction'], row['efficiency']))
@@ -51,4 +51,4 @@ def draw_chart(name):
 
 
 if __name__ == "__main__":
-    draw_chart('largest_degree_attack_with_largest_degree_protect.csv')
+    draw_chart('shanghai_highest_bc_attack_with_largest_degree_protect.csv')

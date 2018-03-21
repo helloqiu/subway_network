@@ -3,8 +3,10 @@
 import os
 import csv
 from attack import random_attack_list, largest_degree_attack_list, highest_bc_attack_list, highest_bt_attack_list
-from graph import get_chengdu_subway_graph
+from attack import shanghai_highest_bc_attack_list
+from graph import get_chengdu_subway_graph, get_shanghai_subway_graph
 from networkx.algorithms.efficiency import global_efficiency
+from multiprocessing import Process
 
 d = 0.02
 base_dir = os.path.join(os.path.dirname(__file__), '../../data/')
@@ -14,7 +16,7 @@ def attack_with_protect_efficiency(attack, protect):
     attack_name = attack.__name__.replace('_attack_list', '')
     protect_name = protect.__name__.replace('_attack_list', '')
     result = get_result(attack, protect)
-    with open(os.path.join(base_dir, 'attack/{}_attack_with_{}_protect.csv').format(attack_name, protect_name),
+    with open(os.path.join(base_dir, 'shanghai_attack/{}_attack_with_{}_protect.csv').format(attack_name, protect_name),
               'a') as f:
         w = csv.DictWriter(f, ['attack_fraction', 'protect_fraction', 'efficiency'])
         w.writeheader()
@@ -50,7 +52,8 @@ def get_result(attack, protect):
         attack_fraction = d * i
         print('attack fraction: %.2f' % attack_fraction)
         for j in range(0, 25):
-            g = get_chengdu_subway_graph()
+            # g = get_chengdu_subway_graph()
+            g = get_shanghai_subway_graph()
             attack_list = attack(g, fraction=attack_fraction)
             protect_fraction = d * j
             print('\t protect fraction: %.2f' % protect_fraction)
@@ -67,4 +70,23 @@ def get_result(attack, protect):
 
 
 if __name__ == "__main__":
-    random_related_efficiency(attack=random_attack_list, protect=random_attack_list)
+    t_list = list()
+    t = Process(target=attack_with_protect_efficiency, args=(largest_degree_attack_list, largest_degree_attack_list))
+    t_list.append(t)
+
+    t = Process(target=attack_with_protect_efficiency,
+                args=(shanghai_highest_bc_attack_list, largest_degree_attack_list))
+    t_list.append(t)
+
+    t = Process(target=attack_with_protect_efficiency,
+                args=(highest_bt_attack_list, largest_degree_attack_list))
+    t_list.append(t)
+
+    t = Process(target=random_related_efficiency,
+                args=(random_attack_list, largest_degree_attack_list))
+    t_list.append(t)
+
+    for t in t_list:
+        t.start()
+    for t in t_list:
+        t.join()
