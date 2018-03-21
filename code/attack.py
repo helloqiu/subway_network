@@ -53,7 +53,11 @@ def random_attack_list(G, fraction=0.0):
     remove_num = int(fraction * nodes_num)
     result = list()
     for i in range(0, remove_num):
-        result.append(choice(list(G.nodes)))
+        while True:
+            temp = choice(list(G.nodes))
+            if temp not in result:
+                break
+        result.append(temp)
     return result
 
 

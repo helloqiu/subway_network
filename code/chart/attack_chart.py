@@ -11,7 +11,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 d = 0.005
-base_dir = os.path.join(os.path.dirname(__file__), '../../data/')
+base_dir = os.path.join(os.path.abspath(os.path.dirname(__file__)), '../../data/')
 marker_size = 3
 line_width = 0.6
 
@@ -69,7 +69,7 @@ def chart():
     random_efficiency = list()
     largest_degree_efficiency = list()
     highest_bc_efficiency = list()
-    with open(os.path.join(base_dir, 'attack/random_attack.csv'), 'r') as f:
+    with open(os.path.join(base_dir, 'shanghai_attack/random_attack.csv'), 'r') as f:
         r = csv.DictReader(f)
         for row in r:
             fraction.append(float(row['fraction']))
@@ -81,7 +81,7 @@ def chart():
     p2, = plt.plot(x1, y1, '*', ms=marker_size)
 
     fraction.clear()
-    with open(os.path.join(base_dir, 'attack/largest_degree_attack.csv'), 'r') as f:
+    with open(os.path.join(base_dir, 'shanghai_attack/largest_degree_attack.csv'), 'r') as f:
         r = csv.DictReader(f)
         for row in r:
             fraction.append(float(row['fraction']))
@@ -91,7 +91,7 @@ def chart():
     p4, = plt.plot(x2, y2, '^', ms=marker_size)
 
     fraction.clear()
-    with open(os.path.join(base_dir, 'attack/highest_bc_attack.csv'), 'r') as f:
+    with open(os.path.join(base_dir, 'shanghai_attack/highest_bc_attack.csv'), 'r') as f:
         r = csv.DictReader(f)
         for row in r:
             fraction.append(float(row['fraction']))
@@ -145,40 +145,42 @@ def highest_bc_attack_efficiency():
         w.writerows(result)
 
 
+def shanghai_worker(id, q, lock, result):
+    while True:
+        try:
+            fraction = q.get(block=False)
+            print(">>> Worker {}:".format(id))
+            print("Random attack with fraction: %.3f" % fraction)
+            # Do 100 times and get average num
+            e = 0
+            for j in range(0, 100):
+                print(">>>Worker {} No {} attack.".format(id, j))
+                g = shanghai_random_attack(fraction)
+                e += global_efficiency(g)
+            e = e / 100
+            print(">>> Worker {}:".format(id))
+            print("Get e: %f" % e)
+            with lock:
+                result.put({
+                    'fraction': "%.3f" % fraction,
+                    'efficiency': e
+                })
+        except Empty:
+            return
+
+
 def shanghai_random_attack_efficiency():
     result = list()
     lock = Lock()
     queue = Queue()
     result_queue = Queue()
 
-    def worker(id, q, lock, result):
-        while True:
-            try:
-                fraction = q.get(block=False)
-                print(">>> Worker {}:".format(id))
-                print("Random attack with fraction: %.3f" % fraction)
-                # Do 100 times and get average num
-                e = 0
-                for j in range(0, 100):
-                    g = shanghai_random_attack(fraction)
-                    e += global_efficiency(g)
-                e = e / 100
-                print(">>> Worker {}:".format(id))
-                print("Get e: %f" % e)
-                with lock:
-                    result.put({
-                        'fraction': "%.3f" % fraction,
-                        'efficiency': e
-                    })
-            except Empty:
-                return
-
     for i in range(0, 100):
         queue.put(i * d)
     t_list = list()
 
     for i in range(0, 4):
-        t = Process(target=worker, args=(i, queue, lock, result_queue))
+        t = Process(target=shanghai_worker, args=(i, queue, lock, result_queue))
         t_list.append(t)
     for t in t_list:
         t.start()
@@ -226,4 +228,4 @@ def shanghai_highest_bc_attack_efficiency():
 
 
 if __name__ == "__main__":
-    shanghai_highest_bc_attack_efficiency()
+    chart()
