@@ -36,7 +36,7 @@ def random_related_efficiency(attack, protect):
                 result[r]['efficiency'] += temp[r]['efficiency']
     for i in result:
         i['efficiency'] = i['efficiency'] / 10
-    with open(os.path.join(base_dir, 'attack/{}_attack_with_{}_protect.csv').format(attack_name, protect_name),
+    with open(os.path.join(base_dir, 'shanghai_attack/{}_attack_with_{}_protect.csv').format(attack_name, protect_name),
               'a') as f:
         w = csv.DictWriter(f, ['attack_fraction', 'protect_fraction', 'efficiency'])
         w.writeheader()
@@ -71,19 +71,19 @@ def get_result(attack, protect):
 
 if __name__ == "__main__":
     t_list = list()
-    t = Process(target=attack_with_protect_efficiency, args=(largest_degree_attack_list, largest_degree_attack_list))
+    t = Process(target=attack_with_protect_efficiency, args=(largest_degree_attack_list, shanghai_highest_bc_attack_list))
     t_list.append(t)
 
     t = Process(target=attack_with_protect_efficiency,
-                args=(shanghai_highest_bc_attack_list, largest_degree_attack_list))
+                args=(shanghai_highest_bc_attack_list, shanghai_highest_bc_attack_list))
     t_list.append(t)
 
     t = Process(target=attack_with_protect_efficiency,
-                args=(highest_bt_attack_list, largest_degree_attack_list))
+                args=(highest_bt_attack_list, shanghai_highest_bc_attack_list))
     t_list.append(t)
 
     t = Process(target=random_related_efficiency,
-                args=(random_attack_list, largest_degree_attack_list))
+                args=(random_attack_list, shanghai_highest_bc_attack_list))
     t_list.append(t)
 
     for t in t_list:

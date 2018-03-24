@@ -51,4 +51,4 @@ def draw_chart(name):
 
 
 if __name__ == "__main__":
-    draw_chart('shanghai_highest_bc_attack_with_largest_degree_protect.csv')
+    draw_chart('random_attack_with_largest_degree_protect.csv')
