@@ -71,19 +71,19 @@ def get_result(attack, protect):
 
 if __name__ == "__main__":
     t_list = list()
-    t = Process(target=attack_with_protect_efficiency, args=(largest_degree_attack_list, shanghai_highest_bc_attack_list))
+    t = Process(target=attack_with_protect_efficiency, args=(largest_degree_attack_list, highest_bt_attack_list))
     t_list.append(t)
 
     t = Process(target=attack_with_protect_efficiency,
-                args=(shanghai_highest_bc_attack_list, shanghai_highest_bc_attack_list))
+                args=(shanghai_highest_bc_attack_list, highest_bt_attack_list))
     t_list.append(t)
 
     t = Process(target=attack_with_protect_efficiency,
-                args=(highest_bt_attack_list, shanghai_highest_bc_attack_list))
+                args=(highest_bt_attack_list, highest_bt_attack_list))
     t_list.append(t)
 
     t = Process(target=random_related_efficiency,
-                args=(random_attack_list, shanghai_highest_bc_attack_list))
+                args=(random_attack_list, highest_bt_attack_list))
     t_list.append(t)
 
     for t in t_list:
