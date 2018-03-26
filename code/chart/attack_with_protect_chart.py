@@ -5,13 +5,15 @@ import csv
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
+from mpl_toolkits.mplot3d import Axes3D
 
 base_dir = os.path.join(os.path.dirname(__file__), '../../data/')
+save_dir = os.path.join(os.path.dirname(__file__), '../../picture/')
 
 
 def get_data(name):
     result = list()
-    with open(os.path.join(base_dir, 'attack/{}'.format(name)), 'r') as f:
+    with open(os.path.join(base_dir, 'shanghai_attack/{}'.format(name)), 'r') as f:
         r = csv.DictReader(f)
         for row in r:
             result.append((row['attack_fraction'], row['protect_fraction'], row['efficiency']))
@@ -50,5 +52,30 @@ def draw_chart(name):
     plt.show()
 
 
+def three_d_chart(name):
+    sns.set(style='ticks', palette='Set2')
+    cmap = plt.cm.Reds
+    fig = plt.figure(dpi=200)
+    ax = fig.add_subplot(111, projection='3d')
+    result = get_data(name)
+    attack = list()
+    protect = list()
+    efficiency = list()
+    dic = dict()
+    for i in result:
+        attack.append(float(i[0]))
+        protect.append(float(i[1]))
+        efficiency.append(float(i[2]))
+        dic[(float(i[0]), float(i[1]))] = float(i[2])
+    # ax.plot_surface(x, y, z)
+    ax.plot_trisurf(attack, protect, efficiency)
+    ax.set_xlabel('Attack Fraction')
+    ax.set_ylabel('Protect Fraction')
+    ax.set_zlabel('Efficiency')
+    plt.savefig(os.path.join(save_dir, 'shanghai_attack_protect_3d/{}'.format(name.replace('.csv', '.png'))))
+
+
 if __name__ == "__main__":
-    draw_chart('largest_degree_attack_with_random_protect.csv')
+    for f in os.listdir(os.path.join(base_dir, 'shanghai_attack')):
+        if 'with' in f:
+            three_d_chart(f)
