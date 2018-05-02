@@ -69,6 +69,7 @@ def chart():
     random_efficiency = list()
     largest_degree_efficiency = list()
     highest_bc_efficiency = list()
+    highest_bt_efficiency = list()
     with open(os.path.join(base_dir, 'shanghai_attack/random_attack.csv'), 'r') as f:
         r = csv.DictReader(f)
         for row in r:
@@ -100,14 +101,25 @@ def chart():
     p5, = plt.plot(x3, y3, linewidth=line_width)
     p6, = plt.plot(x3, y3, 'o', ms=marker_size)
 
+    fraction.clear()
+    with open(os.path.join(base_dir, 'shanghai_attack/highest_bt_attack.csv'), 'r') as f:
+        r = csv.DictReader(f)
+        for row in r:
+            fraction.append(float(row['fraction']))
+            highest_bt_efficiency.append(float(row['efficiency']))
+    x4, y4 = zip(*sorted(zip(fraction, highest_bt_efficiency)))
+    p7, = plt.plot(x4, y4, linewidth=line_width)
+    p8, = plt.plot(x4, y4, 'v', ms=marker_size)
+
     ax = plt.gca()
     ax.spines['top'].set_color('none')
     ax.spines['right'].set_color('none')
     plt.xlabel('Fraction of the removed nodes')
     plt.ylabel('Network efficiency')
     ax.legend(
-        [(p1, p2), (p3, p4), (p5, p6)],
-        ['Random attacks', 'Largest degree node-based attacks', 'Highest BC node-based attacks']
+        [(p1, p2), (p3, p4), (p5, p6), (p7, p8)],
+        ['Random attacks', 'Largest degree node-based attacks', 'Highest BC node-based attacks',
+         'Highest BT node-based attacks']
     )
 
     plt.show()
