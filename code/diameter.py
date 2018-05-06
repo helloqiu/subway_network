@@ -2,7 +2,7 @@
 
 import os
 import csv
-from graph import chengdu_graph_by_date
+from graph import shanghai_graph_by_date
 from networkx.algorithms.distance_measures import diameter
 
 base_dir = os.path.join(os.path.dirname(__file__), '../data/')
@@ -10,7 +10,7 @@ base_dir = os.path.join(os.path.dirname(__file__), '../data/')
 
 def get_diameter():
     l = list()
-    result = chengdu_graph_by_date()
+    result = shanghai_graph_by_date()
     for k in result.keys():
         g = result[k]
         d = diameter(g)
@@ -18,7 +18,7 @@ def get_diameter():
             'date': k.strftime("%Y-%m-%d"),
             'diameter': d
         })
-    with open(os.path.join(base_dir, '网络直径.csv'), 'a') as f:
+    with open(os.path.join(base_dir, '上海分阶段数据/网络直径.csv'), 'a') as f:
         w = csv.DictWriter(f, ['date', 'diameter'])
         w.writeheader()
         w.writerows(l)

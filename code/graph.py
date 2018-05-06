@@ -5,6 +5,7 @@ import csv
 import networkx as nx
 from collections import OrderedDict
 from datetime import datetime
+from util.breadth_tree import giant_connected_component
 
 NAME_LIST = ['一号线', '二号线', '三号线', '四号线', '十号线', '七号线']
 SHANGHAI_NAME_LIST = ['一号线', '二号线', '三号线', '四号线', '五号线', '六号线',
@@ -94,6 +95,15 @@ def chengdu_nodes_by_date():
     return _nodes_by_date(path_list)
 
 
+def shanghai_nodes_by_date():
+    path_list = []
+    for name in SHANGHAI_NAME_LIST:
+        path_list.append(os.path.join(
+            os.path.abspath(os.path.dirname(__file__)),
+            '../data/shanghai_metadata/{}.csv'.format(name)))
+    return _nodes_by_date(path_list)
+
+
 def chengdu_graph_by_date():
     """
     Get a graph of chengdu by date.
@@ -116,4 +126,25 @@ def chengdu_graph_by_date():
                 temp.append(i)
         g.remove_edges_from(temp)
         result[key] = g
+    return OrderedDict(sorted(result.items()))
+
+
+def shanghai_graph_by_date():
+    nodes = shanghai_nodes_by_date()
+    n = list()
+    result = dict()
+    for key in nodes:
+        n = n + nodes[key]
+        g = get_shanghai_subway_graph()
+        temp = list()
+        for i in g.nodes:
+            if i not in n:
+                temp.append(i)
+        g.remove_nodes_from(temp)
+        temp = list()
+        for i in g.edges:
+            if (i[0] not in n) or (i[1] not in n):
+                temp.append(i)
+        g.remove_edges_from(temp)
+        result[key] = giant_connected_component(g)
     return OrderedDict(sorted(result.items()))

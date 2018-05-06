@@ -2,7 +2,7 @@
 
 import os
 import csv
-from graph import get_chengdu_subway_graph, chengdu_graph_by_date
+from graph import get_chengdu_subway_graph, chengdu_graph_by_date, shanghai_graph_by_date
 from networkx.algorithms.centrality import betweenness_centrality
 
 base_dir = os.path.join(os.path.dirname(__file__), '../data/')
@@ -95,3 +95,25 @@ def chengdu_average_bc():
         w = csv.DictWriter(f, ['date', 'average_bc'])
         w.writeheader()
         w.writerows(l)
+
+
+def shanghai_average_bc():
+    result = shanghai_graph_by_date()
+    l = list()
+    for k in result.keys():
+        s = betweenness_centrality(result[k])
+        count = 0
+        for i in s:
+            count += s[i]
+        l.append({
+            'date': k.strftime("%Y-%m-%d"),
+            'average_bc': count / len(s)
+        })
+    with open(os.path.join(base_dir, '上海分阶段数据/average_bc.csv'), 'a') as f:
+        w = csv.DictWriter(f, ['date', 'average_bc'])
+        w.writeheader()
+        w.writerows(l)
+
+
+if __name__ == "__main__":
+    shanghai_average_bc()

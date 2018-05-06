@@ -13,7 +13,7 @@ base_dir = os.path.join(os.path.dirname(__file__), '../../data/')
 def get_data(file_name, col_name):
     date = list()
     size = list()
-    with open(os.path.join(base_dir, "分阶段数据/{}.csv".format(file_name)), 'r') as f:
+    with open(os.path.join(base_dir, "上海分阶段数据/{}.csv".format(file_name)), 'r') as f:
         r = csv.DictReader(f)
         for row in r:
             date.append(datetime.datetime.strptime(row['date'], '%Y-%m-%d'))
@@ -35,4 +35,4 @@ def draw(xlabel, ylabel, filename, col_name):
 
 
 if __name__ == "__main__":
-    draw(xlabel="时间", ylabel="平均BC", filename="平均BC", col_name="average_bc")
+    draw(xlabel="时间", ylabel="规模", filename="规模", col_name="size")
