@@ -28,7 +28,7 @@ def get_data(file_name, col_name, dir_name="上海分阶段数据"):
 
 
 def draw(xlabel, ylabel, filename, col_name):
-    song = fm.FontProperties(fname='/Users/helloqiu/Downloads/simsun.ttc', size=10.5)
+    song = fm.FontProperties(fname=os.path.join(base_dir, '../simsun.ttc'), size=10.5)
     sns.set(style='ticks', palette='Set2')
     plt.rcParams['axes.unicode_minus'] = False
     plt.figure(dpi=200)
