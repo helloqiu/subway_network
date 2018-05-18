@@ -1,0 +1,557 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gexf version="1.2" xmlns="http://www.gexf.net/1.2draft" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2001/XMLSchema-instance">
+  <graph defaultedgetype="undirected" mode="static" name="compose( ,  )">
+    <meta>
+      <creator>NetworkX 2.0</creator>
+      <lastmodified>18/05/2018</lastmodified>
+    </meta>
+    <nodes>
+      <node id="莘庄" label="莘庄" />
+      <node id="外环路" label="外环路" />
+      <node id="莲花路" label="莲花路" />
+      <node id="锦江乐园" label="锦江乐园" />
+      <node id="上海南站" label="上海南站" />
+      <node id="徐家汇" label="徐家汇" />
+      <node id="衡山路" label="衡山路" />
+      <node id="常熟路" label="常熟路" />
+      <node id="陕西南路" label="陕西南路" />
+      <node id="黄陂南路" label="黄陂南路" />
+      <node id="中山北路" label="中山北路" />
+      <node id="延长路" label="延长路" />
+      <node id="上海马戏城" label="上海马戏城" />
+      <node id="汶水路" label="汶水路" />
+      <node id="彭浦新村" label="彭浦新村" />
+      <node id="共康路" label="共康路" />
+      <node id="通河新村" label="通河新村" />
+      <node id="呼兰路" label="呼兰路" />
+      <node id="共富新村" label="共富新村" />
+      <node id="宝安公路" label="宝安公路" />
+      <node id="友谊西路" label="友谊西路" />
+      <node id="富锦路" label="富锦路" />
+      <node id="徐泾东" label="徐泾东" />
+      <node id="虹桥火车站" label="虹桥火车站" />
+      <node id="张江高科" label="张江高科" />
+      <node id="金科路" label="金科路" />
+      <node id="广兰路" label="广兰路" />
+      <node id="唐镇" label="唐镇" />
+      <node id="创新中路" label="创新中路" />
+      <node id="华夏东路" label="华夏东路" />
+      <node id="川沙" label="川沙" />
+      <node id="凌空路" label="凌空路" />
+      <node id="远东大道" label="远东大道" />
+      <node id="海天三路" label="海天三路" />
+      <node id="浦东国际机场" label="浦东国际机场" />
+      <node id="石龙路" label="石龙路" />
+      <node id="龙漕路" label="龙漕路" />
+      <node id="漕溪路" label="漕溪路" />
+      <node id="宜山路" label="宜山路" />
+      <node id="虹桥路" label="虹桥路" />
+      <node id="延安西路" label="延安西路" />
+      <node id="金沙江路" label="金沙江路" />
+      <node id="镇坪路" label="镇坪路" />
+      <node id="中潭路" label="中潭路" />
+      <node id="宝山路" label="宝山路" />
+      <node id="东宝兴路" label="东宝兴路" />
+      <node id="虹口足球场" label="虹口足球场" />
+      <node id="赤峰路" label="赤峰路" />
+      <node id="大柏树" label="大柏树" />
+      <node id="江湾镇" label="江湾镇" />
+      <node id="殷高西路" label="殷高西路" />
+      <node id="长江南路" label="长江南路" />
+      <node id="淞发路" label="淞发路" />
+      <node id="张华浜" label="张华浜" />
+      <node id="淞滨路" label="淞滨路" />
+      <node id="水产路" label="水产路" />
+      <node id="宝杨路" label="宝杨路" />
+      <node id="友谊路" label="友谊路" />
+      <node id="铁力路" label="铁力路" />
+      <node id="江杨北路" label="江杨北路" />
+      <node id="浦电路" label="浦电路" />
+      <node id="蓝村路" label="蓝村路" />
+      <node id="塘桥" label="塘桥" />
+      <node id="南浦大桥" label="南浦大桥" />
+      <node id="春申路" label="春申路" />
+      <node id="银都路" label="银都路" />
+      <node id="颛桥" label="颛桥" />
+      <node id="北桥" label="北桥" />
+      <node id="剑川路" label="剑川路" />
+      <node id="东川路" label="东川路" />
+      <node id="金平路" label="金平路" />
+      <node id="华宁路" label="华宁路" />
+      <node id="文井路" label="文井路" />
+      <node id="闵行开发区" label="闵行开发区" />
+      <node id="港城路" label="港城路" />
+      <node id="外高桥保税区北" label="外高桥保税区北" />
+      <node id="航津路" label="航津路" />
+      <node id="外高桥保税区南" label="外高桥保税区南" />
+      <node id="洲海路" label="洲海路" />
+      <node id="五洲大道" label="五洲大道" />
+      <node id="东靖路" label="东靖路" />
+      <node id="巨峰路" label="巨峰路" />
+      <node id="五莲路" label="五莲路" />
+      <node id="博兴路" label="博兴路" />
+      <node id="金桥路" label="金桥路" />
+      <node id="云山路" label="云山路" />
+      <node id="德平路" label="德平路" />
+      <node id="北洋泾路" label="北洋泾路" />
+      <node id="民生路" label="民生路" />
+      <node id="源深体育中心" label="源深体育中心" />
+      <node id="上海儿童医学中心" label="上海儿童医学中心" />
+      <node id="临沂新村" label="临沂新村" />
+      <node id="高科西路" label="高科西路" />
+      <node id="东明路" label="东明路" />
+      <node id="高青路" label="高青路" />
+      <node id="华夏西路" label="华夏西路" />
+      <node id="上南路" label="上南路" />
+      <node id="灵岩南路" label="灵岩南路" />
+      <node id="东方体育中心" label="东方体育中心" />
+      <node id="美兰湖" label="美兰湖" />
+      <node id="罗南新村" label="罗南新村" />
+      <node id="潘广路" label="潘广路" />
+      <node id="刘行" label="刘行" />
+      <node id="顾村公园" label="顾村公园" />
+      <node id="祁华路" label="祁华路" />
+      <node id="上海大学" label="上海大学" />
+      <node id="南陈路" label="南陈路" />
+      <node id="上大路" label="上大路" />
+      <node id="场中路" label="场中路" />
+      <node id="大场镇" label="大场镇" />
+      <node id="行知路" label="行知路" />
+      <node id="大华三路" label="大华三路" />
+      <node id="新村路" label="新村路" />
+      <node id="岚皋路" label="岚皋路" />
+      <node id="长寿路" label="长寿路" />
+      <node id="昌平路" label="昌平路" />
+      <node id="龙华中路" label="龙华中路" />
+      <node id="后滩" label="后滩" />
+      <node id="长清路" label="长清路" />
+      <node id="耀华路" label="耀华路" />
+      <node id="云台路" label="云台路" />
+      <node id="杨高南路" label="杨高南路" />
+      <node id="锦绣路" label="锦绣路" />
+      <node id="芳华路" label="芳华路" />
+      <node id="花木路" label="花木路" />
+      <node id="市光路" label="市光路" />
+      <node id="嫩江路" label="嫩江路" />
+      <node id="翔殷路" label="翔殷路" />
+      <node id="黄兴公园" label="黄兴公园" />
+      <node id="延吉中路" label="延吉中路" />
+      <node id="黄兴路" label="黄兴路" />
+      <node id="江浦路" label="江浦路" />
+      <node id="鞍山新村" label="鞍山新村" />
+      <node id="四平路" label="四平路" />
+      <node id="曲阳路" label="曲阳路" />
+      <node id="西藏北路" label="西藏北路" />
+      <node id="中兴路" label="中兴路" />
+      <node id="曲阜路" label="曲阜路" />
+      <node id="大世界" label="大世界" />
+      <node id="老西门" label="老西门" />
+      <node id="中华艺术宫" label="中华艺术宫" />
+      <node id="成山路" label="成山路" />
+      <node id="杨思" label="杨思" />
+      <node id="凌兆新村" label="凌兆新村" />
+      <node id="芦恒路" label="芦恒路" />
+      <node id="浦江镇" label="浦江镇" />
+      <node id="江月路" label="江月路" />
+      <node id="联航路" label="联航路" />
+      <node id="沈杜公路" label="沈杜公路" />
+      <node id="松江南站" label="松江南站" />
+      <node id="醉白池" label="醉白池" />
+      <node id="松江体育中心" label="松江体育中心" />
+      <node id="松江新城" label="松江新城" />
+      <node id="松江大学城" label="松江大学城" />
+      <node id="洞泾" label="洞泾" />
+      <node id="佘山" label="佘山" />
+      <node id="泗泾" label="泗泾" />
+      <node id="九亭" label="九亭" />
+      <node id="中春路" label="中春路" />
+      <node id="七宝" label="七宝" />
+      <node id="星中路" label="星中路" />
+      <node id="合川路" label="合川路" />
+      <node id="漕河泾开发区" label="漕河泾开发区" />
+      <node id="桂林路" label="桂林路" />
+      <node id="杨高中路" label="杨高中路" />
+      <node id="芳甸路" label="芳甸路" />
+      <node id="蓝天路" label="蓝天路" />
+      <node id="台儿庄路" label="台儿庄路" />
+      <node id="金桥" label="金桥" />
+      <node id="金吉路" label="金吉路" />
+      <node id="金海路" label="金海路" />
+      <node id="顾唐路" label="顾唐路" />
+      <node id="民雷路" label="民雷路" />
+      <node id="曹路" label="曹路" />
+      <node id="新江湾城" label="新江湾城" />
+      <node id="殷高东路" label="殷高东路" />
+      <node id="三门路" label="三门路" />
+      <node id="江湾体育场" label="江湾体育场" />
+      <node id="五角场" label="五角场" />
+      <node id="国权路" label="国权路" />
+      <node id="同济大学" label="同济大学" />
+      <node id="四川北路" label="四川北路" />
+      <node id="天潼路" label="天潼路" />
+      <node id="豫园" label="豫园" />
+      <node id="新天地" label="新天地" />
+      <node id="上海图书馆" label="上海图书馆" />
+      <node id="交通大学" label="交通大学" />
+      <node id="宋园路" label="宋园路" />
+      <node id="伊犁路" label="伊犁路" />
+      <node id="水城路" label="水城路" />
+      <node id="龙溪路" label="龙溪路" />
+      <node id="上海动物园" label="上海动物园" />
+      <node id="虹桥1号航站楼" label="虹桥1号航站楼" />
+      <node id="龙柏新村" label="龙柏新村" />
+      <node id="紫藤路" label="紫藤路" />
+      <node id="航中路站" label="航中路站" />
+      <node id="迪士尼" label="迪士尼" />
+      <node id="康新公路" label="康新公路" />
+      <node id="秀沿路" label="秀沿路" />
+      <node id="御桥" label="御桥" />
+      <node id="严御路" label="严御路" />
+      <node id="浦三路" label="浦三路" />
+      <node id="三林东" label="三林东" />
+      <node id="三林" label="三林" />
+      <node id="龙耀路" label="龙耀路" />
+      <node id="云锦路" label="云锦路" />
+      <node id="龙华" label="龙华" />
+      <node id="上海游泳馆" label="上海游泳馆" />
+      <node id="祁连山路" label="祁连山路" />
+      <node id="武威路" label="武威路" />
+      <node id="桃浦新村" label="桃浦新村" />
+      <node id="南翔" label="南翔" />
+      <node id="陈翔路" label="陈翔路" />
+      <node id="马陆" label="马陆" />
+      <node id="嘉定新城" label="嘉定新城" />
+      <node id="白银路" label="白银路" />
+      <node id="嘉定西" label="嘉定西" />
+      <node id="嘉定北" label="嘉定北" />
+      <node id="上海赛车场" label="上海赛车场" />
+      <node id="昌吉东路" label="昌吉东路" />
+      <node id="上海汽车城" label="上海汽车城" />
+      <node id="安亭" label="安亭" />
+      <node id="兆丰路" label="兆丰路" />
+      <node id="光明路" label="光明路" />
+      <node id="花桥" label="花桥" />
+      <node id="七莘路" label="七莘路" />
+      <node id="虹莘路" label="虹莘路" />
+      <node id="顾戴路" label="顾戴路" />
+      <node id="东兰路" label="东兰路" />
+      <node id="虹梅路" label="虹梅路" />
+      <node id="虹漕路" label="虹漕路" />
+      <node id="桂林公园" label="桂林公园" />
+      <node id="国际客运中心" label="国际客运中心" />
+      <node id="提篮桥" label="提篮桥" />
+      <node id="江浦公园" label="江浦公园" />
+      <node id="宁国路" label="宁国路" />
+      <node id="隆昌路" label="隆昌路" />
+      <node id="爱国路" label="爱国路" />
+      <node id="复兴岛" label="复兴岛" />
+      <node id="东陆路" label="东陆路" />
+      <node id="杨高北路" label="杨高北路" />
+      <node id="金京路" label="金京路" />
+      <node id="申江路" label="申江路" />
+      <node id="金运路" label="金运路" />
+      <node id="金沙江西路" label="金沙江西路" />
+      <node id="丰庄" label="丰庄" />
+      <node id="祁连山南路" label="祁连山南路" />
+      <node id="真北路" label="真北路" />
+      <node id="大渡河路" label="大渡河路" />
+      <node id="武宁路" label="武宁路" />
+      <node id="江宁路" label="江宁路" />
+      <node id="自然博物馆" label="自然博物馆" />
+      <node id="淮海中路" label="淮海中路" />
+      <node id="世博会博物馆" label="世博会博物馆" />
+      <node id="世博大道" label="世博大道" />
+      <node id="周浦东" label="周浦东" />
+      <node id="鹤沙航城" label="鹤沙航城" />
+      <node id="航头东" label="航头东" />
+      <node id="新场" label="新场" />
+      <node id="野生动物园" label="野生动物园" />
+      <node id="惠南" label="惠南" />
+      <node id="惠南东" label="惠南东" />
+      <node id="书院" label="书院" />
+      <node id="临港大道" label="临港大道" />
+      <node id="滴水湖" label="滴水湖" />
+      <node id="东方绿舟" label="东方绿舟" />
+      <node id="朱家角" label="朱家角" />
+      <node id="淀山湖大道" label="淀山湖大道" />
+      <node id="漕盈路" label="漕盈路" />
+      <node id="青浦新城" label="青浦新城" />
+      <node id="汇金路" label="汇金路" />
+      <node id="赵巷" label="赵巷" />
+      <node id="嘉松中路" label="嘉松中路" />
+      <node id="徐泾北城" label="徐泾北城" />
+      <node id="徐盈路" label="徐盈路" />
+      <node id="蟠龙路" label="蟠龙路" />
+      <node id="诸光路" label="诸光路" />
+    </nodes>
+    <edges>
+      <edge id="0" source="莘庄" target="外环路" weight="1303.0" />
+      <edge id="1" source="莘庄" target="春申路" weight="1588.0" />
+      <edge id="2" source="外环路" target="莲花路" weight="1459.0" />
+      <edge id="3" source="莲花路" target="锦江乐园" weight="1633.0" />
+      <edge id="4" source="锦江乐园" target="上海南站" weight="2089.0" />
+      <edge id="5" source="上海南站" target="石龙路" weight="1314.0" />
+      <edge id="6" source="徐家汇" target="衡山路" weight="1473.0" />
+      <edge id="7" source="徐家汇" target="宜山路" weight="1505.0" />
+      <edge id="8" source="徐家汇" target="上海游泳馆" weight="1764.0" />
+      <edge id="9" source="徐家汇" target="交通大学" weight="905.0" />
+      <edge id="10" source="衡山路" target="常熟路" weight="1156.0" />
+      <edge id="11" source="常熟路" target="陕西南路" weight="939.0" />
+      <edge id="12" source="陕西南路" target="黄陂南路" weight="1407.0" />
+      <edge id="13" source="陕西南路" target="新天地" weight="1.7" />
+      <edge id="14" source="陕西南路" target="上海图书馆" weight="1.6" />
+      <edge id="15" source="中山北路" target="延长路" weight="1482.0" />
+      <edge id="16" source="延长路" target="上海马戏城" weight="996.0" />
+      <edge id="17" source="上海马戏城" target="汶水路" weight="1433.0" />
+      <edge id="18" source="汶水路" target="彭浦新村" weight="1563.0" />
+      <edge id="19" source="彭浦新村" target="共康路" weight="1397.0" />
+      <edge id="20" source="共康路" target="通河新村" weight="1425.0" />
+      <edge id="21" source="通河新村" target="呼兰路" weight="1030.0" />
+      <edge id="22" source="呼兰路" target="共富新村" weight="1777.0" />
+      <edge id="23" source="共富新村" target="宝安公路" weight="1643.0" />
+      <edge id="24" source="宝安公路" target="友谊西路" weight="1314.0" />
+      <edge id="25" source="友谊西路" target="富锦路" weight="1274.0" />
+      <edge id="26" source="徐泾东" target="虹桥火车站" weight="2284.0" />
+      <edge id="27" source="虹桥火车站" target="龙柏新村" weight="3.4" />
+      <edge id="28" source="虹桥火车站" target="诸光路" weight="2523.0" />
+      <edge id="29" source="张江高科" target="金科路" weight="1614.0" />
+      <edge id="30" source="金科路" target="广兰路" weight="1640.0" />
+      <edge id="31" source="广兰路" target="唐镇" weight="3385.0" />
+      <edge id="32" source="唐镇" target="创新中路" weight="1827.0" />
+      <edge id="33" source="创新中路" target="华夏东路" weight="1867.0" />
+      <edge id="34" source="华夏东路" target="川沙" weight="2673.0" />
+      <edge id="35" source="川沙" target="凌空路" weight="2268.0" />
+      <edge id="36" source="凌空路" target="远东大道" weight="3220.0" />
+      <edge id="37" source="远东大道" target="海天三路" weight="5857.0" />
+      <edge id="38" source="海天三路" target="浦东国际机场" weight="2511.0" />
+      <edge id="39" source="石龙路" target="龙漕路" weight="1484.0" />
+      <edge id="40" source="龙漕路" target="漕溪路" weight="1025.0" />
+      <edge id="41" source="龙漕路" target="龙华" weight="1.04" />
+      <edge id="42" source="漕溪路" target="宜山路" weight="1538.0" />
+      <edge id="43" source="宜山路" target="虹桥路" weight="1323.0" />
+      <edge id="44" source="宜山路" target="桂林路" weight="1687.0" />
+      <edge id="45" source="虹桥路" target="延安西路" weight="1461.0" />
+      <edge id="46" source="虹桥路" target="交通大学" weight="1.3" />
+      <edge id="47" source="虹桥路" target="宋园路" weight="1.1" />
+      <edge id="48" source="金沙江路" target="大渡河路" />
+      <edge id="49" source="镇坪路" target="中潭路" weight="1473.0" />
+      <edge id="50" source="镇坪路" target="岚皋路" weight="1587.0" />
+      <edge id="51" source="镇坪路" target="长寿路" weight="1015.0" />
+      <edge id="52" source="宝山路" target="东宝兴路" weight="1073.0" />
+      <edge id="53" source="东宝兴路" target="虹口足球场" weight="1311.0" />
+      <edge id="54" source="虹口足球场" target="赤峰路" weight="1150.0" />
+      <edge id="55" source="虹口足球场" target="曲阳路" weight="1480.0" />
+      <edge id="56" source="虹口足球场" target="西藏北路" weight="1277.0" />
+      <edge id="57" source="赤峰路" target="大柏树" weight="911.0" />
+      <edge id="58" source="大柏树" target="江湾镇" weight="1800.0" />
+      <edge id="59" source="江湾镇" target="殷高西路" weight="1603.0" />
+      <edge id="60" source="殷高西路" target="长江南路" weight="1515.0" />
+      <edge id="61" source="长江南路" target="淞发路" weight="1690.0" />
+      <edge id="62" source="淞发路" target="张华浜" weight="1513.0" />
+      <edge id="63" source="张华浜" target="淞滨路" weight="1540.0" />
+      <edge id="64" source="淞滨路" target="水产路" weight="1241.0" />
+      <edge id="65" source="水产路" target="宝杨路" weight="1755.0" />
+      <edge id="66" source="宝杨路" target="友谊路" weight="1029.0" />
+      <edge id="67" source="友谊路" target="铁力路" weight="1704.0" />
+      <edge id="68" source="铁力路" target="江杨北路" weight="2081.0" />
+      <edge id="69" source="浦电路" target="蓝村路" weight="960.36" />
+      <edge id="70" source="蓝村路" target="塘桥" weight="1152.0" />
+      <edge id="71" source="蓝村路" target="上海儿童医学中心" weight="1051.64" />
+      <edge id="72" source="塘桥" target="南浦大桥" weight="2163.0" />
+      <edge id="73" source="春申路" target="银都路" weight="1075.0" />
+      <edge id="74" source="银都路" target="颛桥" weight="2757.0" />
+      <edge id="75" source="颛桥" target="北桥" weight="2551.0" />
+      <edge id="76" source="北桥" target="剑川路" weight="2176.0" />
+      <edge id="77" source="剑川路" target="东川路" weight="969.0" />
+      <edge id="78" source="东川路" target="金平路" weight="1459.0" />
+      <edge id="79" source="金平路" target="华宁路" weight="1487.0" />
+      <edge id="80" source="华宁路" target="文井路" weight="1446.0" />
+      <edge id="81" source="文井路" target="闵行开发区" weight="1105.0" />
+      <edge id="82" source="港城路" target="外高桥保税区北" weight="1618.751" />
+      <edge id="83" source="外高桥保税区北" target="航津路" weight="1535.0" />
+      <edge id="84" source="航津路" target="外高桥保税区南" weight="1706.0" />
+      <edge id="85" source="外高桥保税区南" target="洲海路" weight="2037.545" />
+      <edge id="86" source="洲海路" target="五洲大道" weight="1075.43" />
+      <edge id="87" source="五洲大道" target="东靖路" weight="1318.57" />
+      <edge id="88" source="东靖路" target="巨峰路" weight="1110.0" />
+      <edge id="89" source="巨峰路" target="五莲路" weight="960.698" />
+      <edge id="90" source="巨峰路" target="东陆路" weight="1.09" />
+      <edge id="91" source="巨峰路" target="杨高北路" weight="1.27" />
+      <edge id="92" source="五莲路" target="博兴路" weight="945.0" />
+      <edge id="93" source="博兴路" target="金桥路" weight="854.88" />
+      <edge id="94" source="金桥路" target="云山路" weight="1157.12" />
+      <edge id="95" source="云山路" target="德平路" weight="981.0" />
+      <edge id="96" source="德平路" target="北洋泾路" weight="1331.0" />
+      <edge id="97" source="北洋泾路" target="民生路" weight="917.0" />
+      <edge id="98" source="民生路" target="源深体育中心" weight="907.0" />
+      <edge id="99" source="上海儿童医学中心" target="临沂新村" weight="1284.0" />
+      <edge id="100" source="临沂新村" target="高科西路" weight="1178.272" />
+      <edge id="101" source="高科西路" target="东明路" weight="1454.977" />
+      <edge id="102" source="高科西路" target="云台路" weight="1073.0" />
+      <edge id="103" source="高科西路" target="杨高南路" weight="1503.0" />
+      <edge id="104" source="东明路" target="高青路" weight="1510.751" />
+      <edge id="105" source="高青路" target="华夏西路" weight="1414.334" />
+      <edge id="106" source="华夏西路" target="上南路" weight="792.682" />
+      <edge id="107" source="上南路" target="灵岩南路" weight="1091.984" />
+      <edge id="108" source="灵岩南路" target="东方体育中心" weight="1525.149" />
+      <edge id="109" source="东方体育中心" target="杨思" weight="1593.0" />
+      <edge id="110" source="东方体育中心" target="凌兆新村" weight="1320.0" />
+      <edge id="111" source="东方体育中心" target="三林" weight="3516.0" />
+      <edge id="112" source="东方体育中心" target="龙耀路" weight="2164.0" />
+      <edge id="113" source="美兰湖" target="罗南新村" weight="1347.0" />
+      <edge id="114" source="罗南新村" target="潘广路" weight="2830.0" />
+      <edge id="115" source="潘广路" target="刘行" weight="980.0" />
+      <edge id="116" source="刘行" target="顾村公园" weight="1700.0" />
+      <edge id="117" source="顾村公园" target="祁华路" weight="2709.0" />
+      <edge id="118" source="祁华路" target="上海大学" weight="1691.0" />
+      <edge id="119" source="上海大学" target="南陈路" weight="937.0" />
+      <edge id="120" source="南陈路" target="上大路" weight="1343.0" />
+      <edge id="121" source="上大路" target="场中路" weight="1346.0" />
+      <edge id="122" source="场中路" target="大场镇" weight="1232.0" />
+      <edge id="123" source="大场镇" target="行知路" weight="1037.0" />
+      <edge id="124" source="行知路" target="大华三路" weight="1291.0" />
+      <edge id="125" source="大华三路" target="新村路" weight="1115.0" />
+      <edge id="126" source="新村路" target="岚皋路" weight="844.0" />
+      <edge id="127" source="长寿路" target="昌平路" weight="831.0" />
+      <edge id="128" source="长寿路" target="武宁路" />
+      <edge id="129" source="长寿路" target="江宁路" />
+      <edge id="130" source="龙华中路" target="后滩" weight="2247.0" />
+      <edge id="131" source="龙华中路" target="龙华" weight="1.35" />
+      <edge id="132" source="后滩" target="长清路" weight="1263.0" />
+      <edge id="133" source="长清路" target="耀华路" weight="926.0" />
+      <edge id="134" source="耀华路" target="云台路" weight="703.0" />
+      <edge id="135" source="耀华路" target="中华艺术宫" weight="744.0" />
+      <edge id="136" source="耀华路" target="成山路" weight="908.0" />
+      <edge id="137" source="杨高南路" target="锦绣路" weight="1413.0" />
+      <edge id="138" source="锦绣路" target="芳华路" weight="1443.0" />
+      <edge id="139" source="市光路" target="嫩江路" weight="882.0" />
+      <edge id="140" source="嫩江路" target="翔殷路" weight="1080.0" />
+      <edge id="141" source="翔殷路" target="黄兴公园" weight="1048.0" />
+      <edge id="142" source="黄兴公园" target="延吉中路" weight="926.0" />
+      <edge id="143" source="延吉中路" target="黄兴路" weight="1273.0" />
+      <edge id="144" source="黄兴路" target="江浦路" weight="1049.0" />
+      <edge id="145" source="江浦路" target="鞍山新村" weight="878.0" />
+      <edge id="146" source="鞍山新村" target="四平路" weight="828.0" />
+      <edge id="147" source="四平路" target="曲阳路" weight="1057.0" />
+      <edge id="148" source="四平路" target="同济大学" weight="1.0" />
+      <edge id="149" source="西藏北路" target="中兴路" weight="1226.0" />
+      <edge id="150" source="中兴路" target="曲阜路" weight="1235.0" />
+      <edge id="151" source="曲阜路" target="天潼路" weight="1.04" />
+      <edge id="152" source="大世界" target="老西门" weight="1004.0" />
+      <edge id="153" source="老西门" target="豫园" weight="1.4" />
+      <edge id="154" source="老西门" target="新天地" weight="0.8" />
+      <edge id="155" source="成山路" target="杨思" weight="1198.0" />
+      <edge id="156" source="凌兆新村" target="芦恒路" weight="2733.0" />
+      <edge id="157" source="芦恒路" target="浦江镇" weight="2455.0" />
+      <edge id="158" source="浦江镇" target="江月路" weight="1423.0" />
+      <edge id="159" source="江月路" target="联航路" weight="1050.0" />
+      <edge id="160" source="联航路" target="沈杜公路" weight="1442.0" />
+      <edge id="161" source="松江南站" target="醉白池" weight="1795.0" />
+      <edge id="162" source="醉白池" target="松江体育中心" weight="1737.0" />
+      <edge id="163" source="松江体育中心" target="松江新城" weight="1583.0" />
+      <edge id="164" source="松江新城" target="松江大学城" weight="2642.0" />
+      <edge id="165" source="松江大学城" target="洞泾" weight="3381.0" />
+      <edge id="166" source="洞泾" target="佘山" weight="2205.0" />
+      <edge id="167" source="佘山" target="泗泾" weight="3868.0" />
+      <edge id="168" source="泗泾" target="九亭" weight="6246.0" />
+      <edge id="169" source="九亭" target="中春路" weight="2263.0" />
+      <edge id="170" source="中春路" target="七宝" weight="1305.0" />
+      <edge id="171" source="七宝" target="星中路" weight="1880.0" />
+      <edge id="172" source="星中路" target="合川路" weight="1856.0" />
+      <edge id="173" source="合川路" target="漕河泾开发区" weight="1335.0" />
+      <edge id="174" source="漕河泾开发区" target="桂林路" weight="2032.0" />
+      <edge id="175" source="杨高中路" target="芳甸路" weight="1065.0" />
+      <edge id="176" source="芳甸路" target="蓝天路" weight="2121.0" />
+      <edge id="177" source="蓝天路" target="台儿庄路" weight="2306.0" />
+      <edge id="178" source="台儿庄路" target="金桥" weight="1545.0" />
+      <edge id="179" source="金桥" target="金吉路" weight="1697.0" />
+      <edge id="180" source="金吉路" target="金海路" weight="1024.0" />
+      <edge id="181" source="金海路" target="顾唐路" weight="1710.0" />
+      <edge id="182" source="金海路" target="申江路" weight="2.53" />
+      <edge id="183" source="顾唐路" target="民雷路" weight="1125.0" />
+      <edge id="184" source="民雷路" target="曹路" weight="1506.0" />
+      <edge id="185" source="新江湾城" target="殷高东路" weight="0.75" />
+      <edge id="186" source="殷高东路" target="三门路" weight="1.05" />
+      <edge id="187" source="三门路" target="江湾体育场" weight="1.2" />
+      <edge id="188" source="江湾体育场" target="五角场" weight="0.6" />
+      <edge id="189" source="五角场" target="国权路" weight="1.0" />
+      <edge id="190" source="国权路" target="同济大学" weight="0.9" />
+      <edge id="191" source="四川北路" target="天潼路" weight="0.9" />
+      <edge id="192" source="天潼路" target="国际客运中心" weight="1.69" />
+      <edge id="193" source="新天地" target="淮海中路" />
+      <edge id="194" source="上海图书馆" target="交通大学" weight="1.1" />
+      <edge id="195" source="宋园路" target="伊犁路" weight="0.7" />
+      <edge id="196" source="伊犁路" target="水城路" weight="1.2" />
+      <edge id="197" source="水城路" target="龙溪路" weight="1.4" />
+      <edge id="198" source="龙溪路" target="上海动物园" weight="1.2" />
+      <edge id="199" source="上海动物园" target="虹桥1号航站楼" weight="2.0" />
+      <edge id="200" source="龙柏新村" target="紫藤路" weight="1.3" />
+      <edge id="201" source="紫藤路" target="航中路站" weight="1.0" />
+      <edge id="202" source="迪士尼" target="康新公路" weight="5073.6" />
+      <edge id="203" source="康新公路" target="秀沿路" weight="2301.4" />
+      <edge id="204" source="御桥" target="严御路" weight="1816.0" />
+      <edge id="205" source="严御路" target="浦三路" weight="1405.0" />
+      <edge id="206" source="浦三路" target="三林东" weight="1613.0" />
+      <edge id="207" source="三林东" target="三林" weight="1126.0" />
+      <edge id="208" source="龙耀路" target="云锦路" weight="934.0" />
+      <edge id="209" source="云锦路" target="龙华" weight="945.0" />
+      <edge id="210" source="龙华" target="上海游泳馆" weight="1466.0" />
+      <edge id="211" source="祁连山路" target="武威路" weight="1277.6" />
+      <edge id="212" source="武威路" target="桃浦新村" weight="1637.4" />
+      <edge id="213" source="桃浦新村" target="南翔" weight="3237.0" />
+      <edge id="214" source="南翔" target="陈翔路" weight="2186.0" />
+      <edge id="215" source="陈翔路" target="马陆" weight="3660.0" />
+      <edge id="216" source="马陆" target="嘉定新城" weight="2896.0" />
+      <edge id="217" source="嘉定新城" target="白银路" weight="1887.0" />
+      <edge id="218" source="白银路" target="嘉定西" weight="3919.0" />
+      <edge id="219" source="嘉定西" target="嘉定北" weight="1944.0" />
+      <edge id="220" source="嘉定北" target="上海赛车场" weight="3087.0" />
+      <edge id="221" source="上海赛车场" target="昌吉东路" weight="5515.0" />
+      <edge id="222" source="昌吉东路" target="上海汽车城" weight="2218.0" />
+      <edge id="223" source="上海汽车城" target="安亭" weight="1811.0" />
+      <edge id="224" source="安亭" target="兆丰路" weight="1129.0" />
+      <edge id="225" source="兆丰路" target="光明路" weight="3300.0" />
+      <edge id="226" source="光明路" target="花桥" weight="1267.0" />
+      <edge id="227" source="七莘路" target="虹莘路" weight="1.73" />
+      <edge id="228" source="虹莘路" target="顾戴路" weight="1.23" />
+      <edge id="229" source="顾戴路" target="东兰路" weight="1.87" />
+      <edge id="230" source="东兰路" target="虹梅路" weight="0.69" />
+      <edge id="231" source="虹梅路" target="虹漕路" weight="1.62" />
+      <edge id="232" source="虹漕路" target="桂林公园" weight="0.83" />
+      <edge id="233" source="国际客运中心" target="提篮桥" weight="0.98" />
+      <edge id="234" source="江浦公园" target="宁国路" weight="0.91" />
+      <edge id="235" source="宁国路" target="隆昌路" weight="1.42" />
+      <edge id="236" source="隆昌路" target="爱国路" weight="0.92" />
+      <edge id="237" source="爱国路" target="复兴岛" weight="0.82" />
+      <edge id="238" source="复兴岛" target="东陆路" weight="1.7" />
+      <edge id="239" source="杨高北路" target="金京路" weight="1.16" />
+      <edge id="240" source="金京路" target="申江路" weight="1.14" />
+      <edge id="241" source="金运路" target="金沙江西路" />
+      <edge id="242" source="金沙江西路" target="丰庄" />
+      <edge id="243" source="丰庄" target="祁连山南路" />
+      <edge id="244" source="祁连山南路" target="真北路" />
+      <edge id="245" source="真北路" target="大渡河路" />
+      <edge id="246" source="世博会博物馆" target="世博大道" />
+      <edge id="247" source="周浦东" target="鹤沙航城" weight="2.6" />
+      <edge id="248" source="鹤沙航城" target="航头东" weight="2.6" />
+      <edge id="249" source="航头东" target="新场" weight="3.6" />
+      <edge id="250" source="新场" target="野生动物园" weight="4.8" />
+      <edge id="251" source="野生动物园" target="惠南" weight="6.1" />
+      <edge id="252" source="惠南" target="惠南东" weight="5.8" />
+      <edge id="253" source="惠南东" target="书院" weight="10.6" />
+      <edge id="254" source="书院" target="临港大道" weight="7.1" />
+      <edge id="255" source="临港大道" target="滴水湖" weight="2.6" />
+      <edge id="256" source="东方绿舟" target="朱家角" weight="2807.0" />
+      <edge id="257" source="朱家角" target="淀山湖大道" weight="5838.0" />
+      <edge id="258" source="淀山湖大道" target="漕盈路" weight="3857.0" />
+      <edge id="259" source="漕盈路" target="青浦新城" weight="2810.0" />
+      <edge id="260" source="青浦新城" target="汇金路" weight="2515.0" />
+      <edge id="261" source="汇金路" target="赵巷" weight="3880.0" />
+      <edge id="262" source="赵巷" target="嘉松中路" weight="3057.0" />
+      <edge id="263" source="嘉松中路" target="徐泾北城" weight="2240.0" />
+      <edge id="264" source="徐泾北城" target="徐盈路" weight="1208.0" />
+      <edge id="265" source="徐盈路" target="蟠龙路" weight="2536.0" />
+      <edge id="266" source="蟠龙路" target="诸光路" weight="1500.0" />
+    </edges>
+  </graph>
+</gexf>

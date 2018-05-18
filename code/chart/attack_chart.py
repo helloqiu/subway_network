@@ -13,7 +13,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 d = 0.005
-base_dir = os.path.join(os.path.abspath(os.path.dirname(__file__)), '../../data/')
+base_dir = os.path.join(os.path.abspath(os.path.dirname(__file__)), '../../data')
 marker_size = 6
 line_width = 0.6
 
@@ -92,57 +92,61 @@ def chart():
     highest_bc_efficiency = list()
     highest_bt_efficiency = list()
     # with open(os.path.join(base_dir, 'new_attack/shanghai_random_attack_with_random_protect.csv'), 'r') as f:
-    with open(os.path.join(base_dir, 'attack/random_attack.csv'), 'r') as f:
+    # with open(os.path.join(base_dir, 'attack/random_attack.csv'), 'r') as f:
+    with open(os.path.join(base_dir, '攻击与核-分支关系/上海/random.csv'), 'r') as f:
         r = csv.DictReader(f)
         for row in r:
             fraction.append(float(row['fraction']))
-            random_efficiency.append(float(row['efficiency']))
+            random_efficiency.append(float(row['result']))
     x1, y1 = zip(*sorted(zip(fraction, random_efficiency)))
-    x1, y1 = get_delta(x1, y1)
-    # p1, = ax.plot(x1, y1, linewidth=line_width)
+    # x1, y1 = get_delta(x1, y1)
+    p1, = ax.plot(x1, y1, linewidth=line_width)
     p2, = ax.plot(x1, y1, '*', ms=marker_size)
 
     fraction.clear()
     # with open(os.path.join(base_dir, 'new_attack/shanghai_largest_degree_attack.csv'), 'r') as f:
-    with open(os.path.join(base_dir, 'new_attack/largest_degree_attack_with_random_protect.csv'), 'r') as f:
+    # with open(os.path.join(base_dir, 'new_attack/largest_degree_attack_with_random_protect.csv'), 'r') as f:
+    with open(os.path.join(base_dir, '攻击与核-分支关系/上海/largest_degree.csv'), 'r') as f:
         r = csv.DictReader(f)
         for row in r:
-            fraction.append(float(row['attack_fraction']))
-            largest_degree_efficiency.append(float(row['efficiency']))
+            fraction.append(float(row['fraction']))
+            largest_degree_efficiency.append(float(row['result']))
     x2, y2 = zip(*sorted(zip(fraction, largest_degree_efficiency)))
-    x2, y2 = get_delta(x2, y2)
-    # p3, = ax.plot(x2, y2, linewidth=line_width)
+    # x2, y2 = get_delta(x2, y2)
+    p3, = ax.plot(x2, y2, linewidth=line_width)
     p4, = ax.plot(x2, y2, '^', ms=marker_size)
 
     fraction.clear()
     # with open(os.path.join(base_dir, 'new_attack/shanghai_highest_bc_attack.csv'), 'r') as f:
-    with open(os.path.join(base_dir, 'attack/highest_bc_attack.csv'), 'r') as f:
+    # with open(os.path.join(base_dir, 'attack/highest_bc_attack.csv'), 'r') as f:
+    with open(os.path.join(base_dir, '攻击与核-分支关系/上海/shanghai_highest_bc.csv'), 'r') as f:
         r = csv.DictReader(f)
         for row in r:
             fraction.append(float(row['fraction']))
-            highest_bc_efficiency.append(float(row['efficiency']))
+            highest_bc_efficiency.append(float(row['result']))
     x3, y3 = zip(*sorted(zip(fraction, highest_bc_efficiency)))
-    x3, y3 = get_delta(x3, y3)
-    # p5, = ax.plot(x3, y3, linewidth=line_width)
+    # x3, y3 = get_delta(x3, y3)
+    p5, = ax.plot(x3, y3, linewidth=line_width)
     p6, = ax.plot(x3, y3, 'o', ms=marker_size)
 
     fraction.clear()
     # with open(os.path.join(base_dir, 'new_attack/shanghai_highest_bt_attack.csv'), 'r') as f:
-    with open(os.path.join(base_dir, 'attack/highest_bt_attack.csv'), 'r') as f:
+    # with open(os.path.join(base_dir, 'attack/highest_bt_attack.csv'), 'r') as f:
+    with open(os.path.join(base_dir, '攻击与核-分支关系/上海/highest_bt.csv'), 'r') as f:
         r = csv.DictReader(f)
         for row in r:
             fraction.append(float(row['fraction']))
-            highest_bt_efficiency.append(float(row['efficiency']))
+            highest_bt_efficiency.append(float(row['result']))
     x4, y4 = zip(*sorted(zip(fraction, highest_bt_efficiency)))
-    x4, y4 = get_delta(x4, y4)
-    # p7, = ax.plot(x4, y4, linewidth=line_width)
+    # x4, y4 = get_delta(x4, y4)
+    p7, = ax.plot(x4, y4, linewidth=line_width)
     p8, = ax.plot(x4, y4, 'v', ms=marker_size)
 
     ax = plt.gca()
     ax.set_xlabel('攻击节点比例', fontproperties=song)
-    ax.set_ylabel('网络全局效率变化量', fontproperties=song)
+    ax.set_ylabel('攻击节点在核上比例', fontproperties=song)
     ax.legend(
-        [(p2), (p4), (p6), (p8)],
+        [(p1, p2), (p3, p4), (p5, p6), (p7, p8)],
         ['随机攻击', '度优先攻击', '介数中心性优先攻击',
          '广度优先树优先攻击'],
         prop=dict(fname=os.path.join(base_dir, '../simsun.ttc'), size=10.5)
