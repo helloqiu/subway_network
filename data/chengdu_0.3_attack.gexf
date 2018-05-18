@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gexf version="1.2" xmlns="http://www.gexf.net/1.2draft" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2001/XMLSchema-instance">
+  <graph defaultedgetype="undirected" mode="static" name="compose( ,  )">
+    <meta>
+      <creator>NetworkX 2.0</creator>
+      <lastmodified>18/05/2018</lastmodified>
+    </meta>
+    <nodes>
+      <node id="升仙湖" label="升仙湖" />
+      <node id="人民北路" label="人民北路" />
+      <node id="文殊院" label="文殊院" />
+      <node id="锦江宾馆" label="锦江宾馆" />
+      <node id="华西坝" label="华西坝" />
+      <node id="桐梓林" label="桐梓林" />
+      <node id="金融城" label="金融城" />
+      <node id="世纪城" label="世纪城" />
+      <node id="天府三街" label="天府三街" />
+      <node id="华府大道" label="华府大道" />
+      <node id="四河" label="四河" />
+      <node id="广都" label="广都" />
+      <node id="犀浦" label="犀浦" />
+      <node id="天河路" label="天河路" />
+      <node id="金周路" label="金周路" />
+      <node id="金科北路" label="金科北路" />
+      <node id="迎宾大道" label="迎宾大道" />
+      <node id="茶店子客运站" label="茶店子客运站" />
+      <node id="羊犀立交" label="羊犀立交" />
+      <node id="蜀汉路东" label="蜀汉路东" />
+      <node id="白果林" label="白果林" />
+      <node id="通惠门" label="通惠门" />
+      <node id="人民公园" label="人民公园" />
+      <node id="牛王庙" label="牛王庙" />
+      <node id="东大路" label="东大路" />
+      <node id="塔子山公园" label="塔子山公园" />
+      <node id="成渝立交" label="成渝立交" />
+      <node id="惠王陵" label="惠王陵" />
+      <node id="洪河" label="洪河" />
+      <node id="成都行政学院" label="成都行政学院" />
+      <node id="大面铺" label="大面铺" />
+      <node id="连山坡" label="连山坡" />
+      <node id="书房" label="书房" />
+      <node id="龙泉驿" label="龙泉驿" />
+      <node id="军区总医院" label="军区总医院" />
+      <node id="熊猫大道" label="熊猫大道" />
+      <node id="动物园" label="动物园" />
+      <node id="昭觉寺南路" label="昭觉寺南路" />
+      <node id="前锋路" label="前锋路" />
+      <node id="红星桥" label="红星桥" />
+      <node id="新南门" label="新南门" />
+      <node id="磨子桥" label="磨子桥" />
+      <node id="高升桥" label="高升桥" />
+      <node id="红牌楼" label="红牌楼" />
+      <node id="万盛" label="万盛" />
+      <node id="凤溪河" label="凤溪河" />
+      <node id="涌泉" label="涌泉" />
+      <node id="凤凰大街" label="凤凰大街" />
+      <node id="马厂坝" label="马厂坝" />
+      <node id="非遗博览园" label="非遗博览园" />
+      <node id="蔡桥" label="蔡桥" />
+      <node id="中坝" label="中坝" />
+      <node id="成都西站" label="成都西站" />
+      <node id="清江西路" label="清江西路" />
+      <node id="西南财大" label="西南财大" />
+      <node id="宽窄巷子" label="宽窄巷子" />
+      <node id="太升南路" label="太升南路" />
+      <node id="玉双路" label="玉双路" />
+      <node id="双桥路" label="双桥路" />
+      <node id="万年场" label="万年场" />
+      <node id="来龙" label="来龙" />
+      <node id="十陵" label="十陵" />
+      <node id="成都大学" label="成都大学" />
+      <node id="明蜀王陵" label="明蜀王陵" />
+      <node id="西河" label="西河" />
+      <node id="簇锦" label="簇锦" />
+      <node id="华兴" label="华兴" />
+      <node id="双流机场2航站楼" label="双流机场2航站楼" />
+      <node id="崔家店" label="崔家店" />
+      <node id="双店路" label="双店路" />
+      <node id="迎晖路" label="迎晖路" />
+      <node id="大观" label="大观" />
+      <node id="琉璃场" label="琉璃场" />
+      <node id="三瓦窑" label="三瓦窑" />
+      <node id="神仙树" label="神仙树" />
+      <node id="武侯大道" label="武侯大道" />
+      <node id="龙爪堰" label="龙爪堰" />
+      <node id="东坡路" label="东坡路" />
+      <node id="金沙博物馆" label="金沙博物馆" />
+      <node id="花照壁" label="花照壁" />
+      <node id="西南交大" label="西南交大" />
+      <node id="九里堤" label="九里堤" />
+      <node id="北站西二路" label="北站西二路" />
+      <node id="府青路" label="府青路" />
+      <node id="八里庄" label="八里庄" />
+      <node id="二仙桥" label="二仙桥" />
+      <node id="理工大学" label="理工大学" />
+    </nodes>
+    <edges>
+      <edge id="0" source="人民北路" target="文殊院" weight="1.7" />
+      <edge id="1" source="锦江宾馆" target="华西坝" weight="0.8" />
+      <edge id="2" source="世纪城" target="天府三街" weight="1.0" />
+      <edge id="3" source="华府大道" target="四河" weight="1.1" />
+      <edge id="4" source="四河" target="广都" weight="1.1" />
+      <edge id="5" source="犀浦" target="天河路" weight="1.8" />
+      <edge id="6" source="金周路" target="金科北路" weight="1.1" />
+      <edge id="7" source="金科北路" target="迎宾大道" weight="1.1" />
+      <edge id="8" source="迎宾大道" target="茶店子客运站" weight="1.0" />
+      <edge id="9" source="茶店子客运站" target="羊犀立交" weight="1.4" />
+      <edge id="10" source="蜀汉路东" target="白果林" weight="1.1" />
+      <edge id="11" source="通惠门" target="人民公园" weight="0.8" />
+      <edge id="12" source="东大路" target="塔子山公园" weight="1.1" />
+      <edge id="13" source="成渝立交" target="惠王陵" weight="1.4" />
+      <edge id="14" source="惠王陵" target="洪河" weight="1.0" />
+      <edge id="15" source="洪河" target="成都行政学院" weight="1.7" />
+      <edge id="16" source="成都行政学院" target="大面铺" weight="3.0" />
+      <edge id="17" source="大面铺" target="连山坡" weight="1.2" />
+      <edge id="18" source="军区总医院" target="熊猫大道" weight="2.2" />
+      <edge id="19" source="熊猫大道" target="动物园" weight="1.4" />
+      <edge id="20" source="动物园" target="昭觉寺南路" weight="1.4" />
+      <edge id="21" source="前锋路" target="红星桥" weight="0.9" />
+      <edge id="22" source="新南门" target="磨子桥" weight="0.7" />
+      <edge id="23" source="高升桥" target="红牌楼" weight="1.7" />
+      <edge id="24" source="涌泉" target="凤凰大街" weight="1.6" />
+      <edge id="25" source="凤凰大街" target="马厂坝" weight="2.3" />
+      <edge id="26" source="马厂坝" target="非遗博览园" weight="1.0" />
+      <edge id="27" source="非遗博览园" target="蔡桥" weight="2.2" />
+      <edge id="28" source="蔡桥" target="中坝" weight="2.0" />
+      <edge id="29" source="中坝" target="成都西站" weight="1.9" />
+      <edge id="30" source="成都西站" target="清江西路" weight="2.5" />
+      <edge id="31" source="玉双路" target="双桥路" weight="1.6" />
+      <edge id="32" source="双桥路" target="万年场" weight="0.7" />
+      <edge id="33" source="来龙" target="十陵" weight="0.8" />
+      <edge id="34" source="十陵" target="成都大学" weight="0.9" />
+      <edge id="35" source="成都大学" target="明蜀王陵" weight="1.5" />
+      <edge id="36" source="明蜀王陵" target="西河" weight="2.3" />
+      <edge id="37" source="簇锦" target="华兴" weight="1.6" />
+      <edge id="38" source="崔家店" target="双店路" weight="1.012" />
+      <edge id="39" source="崔家店" target="理工大学" weight="0.931" />
+      <edge id="40" source="琉璃场" target="三瓦窑" weight="2.419" />
+      <edge id="41" source="武侯大道" target="龙爪堰" weight="1.672" />
+      <edge id="42" source="龙爪堰" target="东坡路" weight="1.061" />
+      <edge id="43" source="花照壁" target="西南交大" weight="0.853" />
+      <edge id="44" source="西南交大" target="九里堤" weight="0.768" />
+      <edge id="45" source="九里堤" target="北站西二路" weight="0.879" />
+      <edge id="46" source="府青路" target="八里庄" weight="1.308" />
+      <edge id="47" source="八里庄" target="二仙桥" weight="1.05" />
+      <edge id="48" source="二仙桥" target="理工大学" weight="1.188" />
+    </edges>
+  </graph>
+</gexf>

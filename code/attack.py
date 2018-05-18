@@ -7,6 +7,7 @@ from betweenness_centrality_list import bc_list
 from util.breadth_tree import get_bt_list
 from networkx.algorithms.efficiency import global_efficiency
 import csv
+import random
 
 base_dir = os.path.join(os.path.dirname(__file__), '../data/')
 d = 0.005
@@ -68,6 +69,23 @@ def random_attack_list(G, fraction=0.0):
 
 
 def largest_degree_attack_list(G, fraction=0.0):
+    class RandomObj:
+        def __init__(self, degree):
+            self.degree = degree
+            self.random = random.random()
+
+        def __lt__(self, other):
+            if self.degree == other.degree:
+                return self.random < other.random
+            else:
+                return self.degree < other.degree
+
+        def __gt__(self, other):
+            if self.degree == other.degree:
+                return self.random > other.random
+            else:
+                return self.degree > other.degree
+
     nodes_num = len(G)
     remove_num = int(fraction * nodes_num)
     result = list()
@@ -75,7 +93,7 @@ def largest_degree_attack_list(G, fraction=0.0):
     for node in list(G.nodes):
         degrees.append({
             'name': node,
-            'degree': G.degree[node]
+            'degree': RandomObj(degree=G.degree[node])
         })
     degrees.sort(key=lambda s: s['degree'], reverse=True)
     for i in range(0, remove_num):
