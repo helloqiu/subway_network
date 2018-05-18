@@ -5,6 +5,7 @@ import networkx as nx
 from networkx.algorithms import k_core
 import os
 import csv
+from graph import get_chengdu_subway_graph, get_shanghai_subway_graph
 
 base_dir = os.path.join(os.path.dirname(__file__), '../data/')
 
@@ -44,4 +45,12 @@ def work(chengdu=True):
 
 
 if __name__ == "__main__":
-    work(chengdu=False)
+    # work(chengdu=False)
+    g = get_chengdu_subway_graph()
+    core = k_core(g, 2)
+    print('成都:')
+    print(len(core.nodes) / len(g.nodes))
+    g = get_shanghai_subway_graph()
+    core = k_core(g, 2)
+    print('上海:')
+    print(len(core.nodes) / len(g.nodes))

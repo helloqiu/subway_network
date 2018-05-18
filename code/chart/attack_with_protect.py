@@ -89,11 +89,11 @@ def get_result(attack, protect):
 
 
 def get_graph(fraction=0.0):
-    g = get_shanghai_subway_graph()
+    g = get_chengdu_subway_graph()
     attack_list = highest_bt_attack_list(g, fraction)
     for node in attack_list:
         g.remove_node(node)
-    nx.write_gexf(g, 'shanghai_bt_{}_attack.gexf'.format(fraction))
+    nx.write_gexf(g, 'chengdu_bt_{}_attack.gexf'.format(fraction))
 
 
 if __name__ == "__main__":
@@ -101,7 +101,7 @@ if __name__ == "__main__":
     # t = Process(target=random_related_efficiency, args=(largest_degree_attack_list, random_attack_list))
     # t_list.append(t)
     #   random_related_efficiency(random_attack_list, random_attack_list)
-    get_graph(fraction=0.15)
+    get_graph(fraction=0.2)
     # t = Process(target=random_related_efficiency,
     #            args=(highest_bc_attack_list, random_attack_list))
     # t_list.append(t)
