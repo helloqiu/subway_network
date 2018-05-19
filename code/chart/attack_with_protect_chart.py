@@ -6,6 +6,9 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
 from mpl_toolkits.mplot3d import Axes3D
+import matplotlib.font_manager as fm
+import matplotlib.pyplot as plt
+from matplotlib import rc
 
 base_dir = os.path.join(os.path.dirname(__file__), '../../data/')
 save_dir = os.path.join(os.path.dirname(__file__), '../../picture/')
@@ -13,7 +16,7 @@ save_dir = os.path.join(os.path.dirname(__file__), '../../picture/')
 
 def get_data(name):
     result = list()
-    with open(os.path.join(base_dir, 'shanghai_attack/{}'.format(name)), 'r') as f:
+    with open(os.path.join(base_dir, 'attack/{}'.format(name)), 'r') as f:
         r = csv.DictReader(f)
         for row in r:
             result.append((row['attack_fraction'], row['protect_fraction'], row['efficiency']))
@@ -21,9 +24,15 @@ def get_data(name):
 
 
 def draw_chart(name):
+    song = fm.FontProperties(fname=os.path.join(base_dir, '../simsun.ttc'), size=10.5)
     sns.set(style='ticks', palette='Set2')
     cmap = plt.cm.Reds
     plt.figure(dpi=200)
+    c = {'family': 'sans-serif', 'sans-serif': ['Times New Roman', 'NSimSun'], 'size': 10.5}
+    rc('font', **c)
+    plt.rcParams['axes.unicode_minus'] = False
+    fig, ax = plt.subplots(num=1, figsize=(3.54, 2.26))
+    plt.subplots_adjust(right=0.99, left=0.125, bottom=0.14, top=0.975)
     result = get_data(name)
     attack = list()
     protect = list()
@@ -41,15 +50,13 @@ def draw_chart(name):
             z[i, j] = dic[(x[i, j], y[i, j])]
 
     plt.pcolormesh(x, y, z, cmap=cmap)
-    plt.colorbar()
-    ax = plt.gca()
-    ax.spines['top'].set_color('none')
-    ax.spines['right'].set_color('none')
-    for label in ax.get_xticklabels()[::2]:
+    # plt.colorbar()
+    _ax = plt.gca()
+    for label in _ax.get_xticklabels()[::2]:
         label.set_visible(False)
-    plt.xlabel('Fraction of the removed nodes')
-    plt.ylabel('Fraction of the protected nodes')
-    plt.show()
+    ax.set_xlabel('攻击节点比例', fontproperties=song)
+    ax.set_ylabel('保护节点比例', fontproperties=song)
+    plt.savefig(os.path.join(save_dir, 'chengdu_attack_new/{}'.format(name).replace('.csv', '.png')))
 
 
 def three_d_chart(name):
@@ -76,6 +83,6 @@ def three_d_chart(name):
 
 
 if __name__ == "__main__":
-    for f in os.listdir(os.path.join(base_dir, 'shanghai_attack')):
+    for f in os.listdir(os.path.join(base_dir, 'attack')):
         if 'with' in f:
-            three_d_chart(f)
+            draw_chart(f)
