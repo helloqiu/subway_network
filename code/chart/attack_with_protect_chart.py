@@ -16,7 +16,7 @@ save_dir = os.path.join(os.path.dirname(__file__), '../../picture/')
 
 def get_data(name):
     result = list()
-    with open(os.path.join(base_dir, 'attack/{}'.format(name)), 'r') as f:
+    with open(os.path.join(base_dir, 'shanghai_attack/{}'.format(name)), 'r') as f:
         r = csv.DictReader(f)
         for row in r:
             result.append((row['attack_fraction'], row['protect_fraction'], row['efficiency']))
@@ -60,8 +60,12 @@ def draw_chart(name):
 
 
 def three_d_chart(name):
+    song = fm.FontProperties(fname=os.path.join(base_dir, '../simsun.ttc'), size=10.5)
     sns.set(style='ticks', palette='Set2')
     cmap = plt.cm.Reds
+    c = {'family': 'sans-serif', 'sans-serif': ['Times New Roman', 'NSimSun'], 'size': 10.5}
+    rc('font', **c)
+    plt.rcParams['axes.unicode_minus'] = False
     fig = plt.figure(dpi=200)
     ax = fig.add_subplot(111, projection='3d')
     result = get_data(name)
@@ -76,13 +80,13 @@ def three_d_chart(name):
         dic[(float(i[0]), float(i[1]))] = float(i[2])
     # ax.plot_surface(x, y, z)
     ax.plot_trisurf(attack, protect, efficiency)
-    ax.set_xlabel('Attack Fraction')
-    ax.set_ylabel('Protect Fraction')
-    ax.set_zlabel('Efficiency')
+    ax.set_xlabel('攻击节点比例', fontproperties=song)
+    ax.set_ylabel('保护节点比例', fontproperties=song)
+    ax.set_zlabel('效率', fontproperties=song)
     plt.savefig(os.path.join(save_dir, 'shanghai_attack_protect_3d/{}'.format(name.replace('.csv', '.png'))))
 
 
 if __name__ == "__main__":
-    for f in os.listdir(os.path.join(base_dir, 'attack')):
+    for f in os.listdir(os.path.join(base_dir, 'shanghai_attack')):
         if 'with' in f:
-            draw_chart(f)
+            three_d_chart(f)
