@@ -131,17 +131,30 @@ def highest_bt_attack_list(G, fraction=0.0):
     return result
 
 
-if __name__ == "__main__":
-    with open(os.path.join(base_dir, 'shanghai_attack/highest_bt_attack.csv'), 'a') as f:
-        result = list()
-        for i in range(0, 100):
-            attack_fraction = d * i
-            print("Attack fraction: {}".format(attack_fraction))
-            g = get_shanghai_subway_graph()
-            attack_list = highest_bt_attack_list(g, fraction=attack_fraction)
-            for node in attack_list:
-                g.remove_node(node)
-            result.append({'fraction': attack_fraction, 'efficiency': global_efficiency(g)})
-        w = csv.DictWriter(f, ['fraction', 'efficiency'])
+def get_list(G, fraction, list_func, shanghai=False):
+    l = list_func(G, fraction)
+    result = list()
+    for i in l:
+        result.append({'node': i})
+    if shanghai:
+        p = os.path.join(base_dir, '攻击0.1节点/上海')
+    else:
+        p = os.path.join(base_dir, '攻击0.1节点/成都')
+    p = os.path.join(p, '{}.csv'.format(list_func.__name__))
+    print(p)
+    with open(p, 'a', encoding='gbk') as f:
+        w = csv.DictWriter(f, ['node'])
         w.writeheader()
         w.writerows(result)
+
+
+if __name__ == "__main__":
+    fraction = 0.1
+    G = get_shanghai_subway_graph()
+    l = [random_attack_list, largest_degree_attack_list, shanghai_highest_bc_attack_list, highest_bt_attack_list]
+    for i in l:
+        get_list(G, fraction, i, shanghai=True)
+    G = get_chengdu_subway_graph()
+    l = [random_attack_list, largest_degree_attack_list, highest_bc_attack_list, highest_bt_attack_list]
+    for i in l:
+        get_list(G, fraction, i, shanghai=False)

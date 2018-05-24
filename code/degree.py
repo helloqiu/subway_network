@@ -22,5 +22,13 @@ def degree_by_date():
         w.writerows(data)
 
 
+def average_degree(G):
+    result = 0
+    for node in g.nodes:
+        result += G.degree(node)
+    result = result / len(g.nodes)
+    return result
+
+
 if __name__ == "__main__":
     degree_by_date()

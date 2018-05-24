@@ -10,7 +10,7 @@ from graph import get_chengdu_subway_graph, get_shanghai_subway_graph
 base_dir = os.path.join(os.path.dirname(__file__), '../data/')
 
 
-def work(chengdu=True):
+def core(chengdu=True):
     data = list()
     if chengdu:
         result = chengdu_graph_by_date()
