@@ -8,7 +8,8 @@ def relative_position(stations=None):
     result = list()
     max_lat = 0
     max_lng = 0
-    with open(os.path.join(os.path.abspath(os.path.dirname(__file__)), '../data/locations_without_duplicate.csv')) as f:
+    with open(os.path.join(os.path.abspath(os.path.dirname(__file__)), '../data/locations_without_duplicate.csv'),
+              encoding='utf-8') as f:
         reader = csv.DictReader(f)
         for row in reader:
             if stations:
@@ -23,6 +24,14 @@ def relative_position(stations=None):
         i['latitude'] = (max_lat + 0.1 - float(i['latitude'])) * 5000
         i['longitude'] = (max_lng + 0.1 - float(i['longitude'])) * 5000
     return result
+
+
+def chengdu_relative_pos_dict():
+    result = relative_position()
+    pos = dict()
+    for i in result:
+        pos[i['name']] = {'x': i['latitude'], 'y': i['longitude']}
+    return pos
 
 
 def shanghai_relative_position(stations=None):

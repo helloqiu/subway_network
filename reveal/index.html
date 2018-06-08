@@ -4,10 +4,14 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>基于复杂网络的城市地铁交通网络研究</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/white.css">
+		<script src="js/sigma/sigma.min.js"></script>
+		<script src="js/sigma/plugins/sigma.parsers.json.min.js"></script>
+		<script src="js/sigma/plugins/sigma.renderers.snapshot.min.js"></script>
+		<script src="js/jquery-3.3.1.min.js"></script>
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -20,12 +24,39 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+		<style>
+				#chengdu_graph {
+					display: flex !important;
+					width: 100%;
+					height: 900px;
+					margin: auto;
+				}
+			</style>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+					<h2>基于复杂网络的城市地铁交通网络研究</h2>
+					<p>张宇阳</p>
+					<p>2014060104025</p>
+				</section>
+				<section>
+					<section>
+						<h1>第二章</h1>
+						<h1>复杂网络基础</h1>
+					</section>
+					<section>
+						<p>度(k)</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>网络建模</h1>
+					</section>
+					<section data-state="chengdu_subway" id="chengdu_graph">
+					</section>
+				</section>
 			</div>
 		</div>
 
@@ -37,13 +68,52 @@
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
+				math: {
+					mathjax: 'node_modules/mathjax/MathJax.js' // offline mode
+				},
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/math/math.js', async: true }
 				]
 			});
+		</script>
+		<script>
+			let s = null
+			function load_data (i) {
+				$('#chengdu_graph').empty()
+				s = new sigma()
+				s.addRenderer({container: 'chengdu_graph', id: 'download'})
+				s.settings({
+					edgeColor: "source"
+				})
+				sigma.parsers.json(`data/成都/${i}.json`,
+					s,
+					function() {
+						s.refresh()
+						const camera = s.cameras[0]
+						camera.goTo({
+							ratio: 1.8,
+							x: -48,
+							y: 332
+						})
+					}
+				)
+				
+				setTimeout(() => {s.renderers.download.snapshot({download: true})}, 1000)
+				if (i < 9) {
+					setTimeout(function() {
+						load_data(i + 1)
+					}, 4000)
+				}
+			}
+
+
+			Reveal.addEventListener('chengdu_subway', function () {
+				load_data(0)
+			}, false)
 		</script>
 	</body>
 </html>
