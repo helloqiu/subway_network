@@ -39,7 +39,7 @@
     "grunt-zip": "~0.17.1",
     "mathjax": "^2.7.4",
     "mustache": "^2.3.0",
-    "socket.io": "^1.7.3"
+    "socket.io": "^2.4.0"
   },
   "license": "MIT"
 }
